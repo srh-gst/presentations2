@@ -201,7 +201,7 @@ $$\hat v_g = \frac{1}{|g|} \sum_{l \in g} \sum_{e} \widehat{CATT_{e,l}} \hat Pr(
 --
 Main assumptions: Parallel trends for all units, Limited anticipation 
 ---
-# Results 
+# Results: Math achievement in grade 3
 .center[
 ```{r out.width = '50%' , echo=FALSE}
 knitr::include_graphics("index/sunab_fema_math_3.png") 

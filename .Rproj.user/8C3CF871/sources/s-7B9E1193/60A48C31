@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "960836993",
     "id" : "60A48C31",
-    "lastKnownWriteTime" : 1693388488,
-    "last_content_update" : 1693388488873,
+    "lastKnownWriteTime" : 1693398910,
+    "last_content_update" : 1693398910849,
     "path" : "~/presentations/index.Rmd",
     "project_path" : "index.Rmd",
     "properties" : {
-        "cursorPosition" : "105,1",
-        "scrollLine" : "80"
+        "cursorPosition" : "203,38",
+        "scrollLine" : "198"
     },
     "read_only" : false,
     "read_only_alternatives" : [
