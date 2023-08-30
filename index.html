@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Going to school during climate change: Natural disasters and student achievement</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Sarah Gust" />
+    <meta name="date" content="2023-08-30" />
+    <link href="index_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="index_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="index_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link href="index_files/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
+    <script src="index_files/tile-view-0.2.6/tile-view.js"></script>
+    <script src="index_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+    <script src="index_files/pymjs-1.3.2/pym.v1.js"></script>
+    <script src="index_files/widgetframe-binding-0.3.1/widgetframe.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Going to school during climate change: Natural disasters and student achievement
+]
+.author[
+### Sarah Gust
+]
+.institute[
+### EEA Barcelona
+]
+.date[
+### 2023-08-30
+]
+
+---
+
+
+
+
+
+
+
+&lt;style type="text/css"&gt;
+.hide-count .remark-slide-number {
+  display: none;
+}
+&lt;/style&gt;
+
+&lt;style type="text/css"&gt;
+.remark-slide-content {
+    font-size: 25px;
+}
+&lt;/style&gt;
+
+
+# Motivation 
+
+.center[
+&lt;img src="index/billion_dollar_disasters.jpg" width="70%" /&gt;
+]
+
+Source: https://www.ncei.noaa.gov/access/billions/time-series
+
+---
+
+# Motivation 
+
+- 22,112 prolonged unplanned school closures in 2011-2019, affecting over 13 million students that resulted in 91.5 million student-days lost (Jahan et al. 2022)
+- Natural disasters (47%), adverse weather conditions (35%) are the most frequent reason
+- Hurricane Harvey led to &gt;3000 schools closed in four states ranging from 1-19 days
+.center[
+&lt;img src="index/closures_all.png" width="40%" /&gt;
+]
+
+
+Data.CDC.gov database: Prolonged Unplanned School Closures: USA, 2011-2019 
+
+---
+
+# Motivation
+
+.pull-left[
+- Frequency and costs of natural disasters have increased
+- Natural disaster can lead to school closures, breakdown of transit system
+- This can have lasting effects on students' achievement and future earnings
+- Most studies look at impact of natural disasters on economic growth but less attention on the impact on students
+- Understanding the costs of natural disasters is crucial for pre- and post-disaster investment and policies
+
+]
+
+.pull-right[
+&lt;img src="index/hurrycane_nyt.jpg" width="55%" /&gt;
+
+&lt;img src="index/ahrtal_sz.JPG" width="55%" /&gt;
+]
+
+---
+
+# This Paper
+
+- Main Question: What are the effects of natural disasters on students?
+- Data: Combining county level achievement (SEDA) with FEMA disaster declarations in the US (2009-2018)
+- Framework: TWFE using the first natural disaster in a county (Sun &amp; Abraham 2021)
+
+
+---
+
+# Contribution to existing literature
+
+### Literature on specific major disasters on schools and students 
+Sacerdote 2012, Di Pietro 2019, Holmes 2002, Spencer et al. 2016, Shidiqi et al. 2023 
+find negative short run effects on students and schools, long run effects are more mixed 
+
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> However, most disasters are not as severe as those outliers
+
+### Literature on school closures and absenteeism 
+Covid papers eg. Werner &amp; Woessmann 2023, teacher and student absenteeism eg. Clotfelder, Ladd, and Vigdor 2006, Miller, Murnane, and Willett 2006
+
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> Natural disaster fundamentally different from Covid, teacher and students absence suffers from endogeneity issues
+
+
+---
+
+# Data on Student Achievement
+
+## Stanford Education Data Archive (SEDA) 2009-2018 
+**District and county level average achievement** (for all students and by race/ethnicity and gender), district and county level racial/ethnic and gender achievement gaps, and district level demographic/socioeconomic data.
+
+- **Achievement is centered around zero**, so a score of zero means the district is at the average expected level of achievement within the United States. One-unit below zero means that students in the district are one grade level behind the average; one-unit above zero means that students in the district are one grade level above the average. 
+
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg>  Use county level and focus on grade 3.
+
+
+
+
+
+---
+# Data: Math scores 
+
+.center[
+&lt;img src="index/math.png" width="50%" /&gt;
+]
+---
+# Data on Disasters
+.pull-left[
+- FEMA major disaster declarations 2009-2018 (begins in 1964)
+- Storms (73%), Floods (20%), Fire (7%), Drought (2%), Freezing, Earthquake, Landslide, Volcanic activity  
+]
+.pull-right[
+&lt;img src="index/fema_first_year.png" width="100%" /&gt;
+]
+
+---
+# Target Parameter 
+
+- Problem: Staggered adoption, coefficients on lead and lag indicators in a dynamic specification can be biased with TWFE
+- Solution: reweighting following Sun and Abraham (2021)
+
+**Cohort average treatment effect on the treated** for a treatment cohort `\(e\)` and relative time period `\(l\)` 
+
+`$$CATT_{e,l} = E[Y_{i,e+l} - Y^{\infty}_{i,e+l}|E_i = e]$$`
+
+`\(Y^{\infty}_{i,e+l}\)` is the potential outcome of county `\(i\)` in a world where it is untreated. 
+
+Here, a treatment cohort `\(e\)` are counties that are treated at the same time. `\(l\)` are periods to i's initial natural disaster.
+
+---
+name: iw
+# Dynamic Treatment effect following Sun &amp; Abraham (2021)
+Estimate the event study regression using "last treated" as control (C):
+
+  `$$Y_{i,t} = \alpha_i + \lambda_t + \sum_{e \notin C} \sum_{l \neq -1} CATT_{e,l}(1\{E_i =e \} \cdot D_{i,t}^l) + \epsilon_{i,t}$$`
+--
+
+### The interaction weighted estimator 
+
+Take the weighted average over all estimates for `\(CATT\)` multiplied by the sample share of each cohort in the period `\(Pr(E=e)\)`:
+
+`$$\hat v_g = \frac{1}{|g|} \sum_{l \in g} \sum_{e} \widehat{CATT_{e,l}} \hat Pr(E_i = e| E_i \in [-l, T-l])$$`
+--
+Main assumptions: Parallel trends for all units, Limited anticipation 
+---
+# Results 
+.center[
+&lt;img src="index/sunab_fema_math_3.png" width="50%" /&gt;
+]
+
+---
+# Larger natural disasters cause more harm
+
+Number of natural disasters versus severe natural disasters (&gt;5 deaths) in the past 5 years.
+
+.center[
+&lt;img src="index/large_small_math_3.png" width="50%" /&gt;
+]
+---
+name: robustness
+# Robustness and Sensitivity
+
+- Using never treated as [control](#nevertreated) 
+- Similar results with [Borusyak, Jaravel, and Spiess (2023)](#borus)
+- No effect on [enrollment](#enrollment)
+
+---
+# Conclusion (for now)
+
+- What is the effect of natural disasters on students?
+- Setting: US where already now 80% of the prolonged unplanned school closures are due to natural disasters and adverse weather conditions
+- Negative effect of natural disaster on student achievement in the year of the natural disasters
+- Severe natural disasters are also more detrimental for students 
+- No effect on enrollment
+- Long to-do list ;) 
+
+---
+class: middle, center, inverse
+
+Get in contact!
+
+
+
+&lt;img src="index/qrplot.png" width="20%" /&gt;
+
+
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/></svg> [gust@ifo.de](mailto:gust@ifo.de) 
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> [https://twitter.com/sarages](https://twitter.com/sarages)
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M130.22 127.548C130.38 127.558 130.3 127.558 130.22 127.548V127.548ZM481.64 172.898C471.03 147.398 449.56 119.898 432.7 111.168C446.42 138.058 454.37 165.048 457.4 185.168C457.405 185.306 457.422 185.443 457.45 185.578C429.87 116.828 383.098 89.1089 344.9 28.7479C329.908 5.05792 333.976 3.51792 331.82 4.08792L331.7 4.15792C284.99 30.1109 256.365 82.5289 249.12 126.898C232.503 127.771 216.219 131.895 201.19 139.035C199.838 139.649 198.736 140.706 198.066 142.031C197.396 143.356 197.199 144.87 197.506 146.323C197.7 147.162 198.068 147.951 198.586 148.639C199.103 149.327 199.76 149.899 200.512 150.318C201.264 150.737 202.096 150.993 202.954 151.071C203.811 151.148 204.676 151.045 205.491 150.768L206.011 150.558C221.511 143.255 238.408 139.393 255.541 139.238C318.369 138.669 352.698 183.262 363.161 201.528C350.161 192.378 326.811 183.338 304.341 187.248C392.081 231.108 368.541 381.784 246.951 376.448C187.487 373.838 149.881 325.467 146.421 285.648C146.421 285.648 157.671 243.698 227.041 243.698C234.541 243.698 255.971 222.778 256.371 216.698C256.281 214.698 213.836 197.822 197.281 181.518C188.434 172.805 184.229 168.611 180.511 165.458C178.499 163.75 176.392 162.158 174.201 160.688C168.638 141.231 168.399 120.638 173.51 101.058C148.45 112.468 128.96 130.508 114.8 146.428H114.68C105.01 134.178 105.68 93.7779 106.25 85.3479C106.13 84.8179 99.022 89.0159 98.1 89.6579C89.5342 95.7103 81.5528 102.55 74.26 110.088C57.969 126.688 30.128 160.242 18.76 211.318C14.224 231.701 12 255.739 12 263.618C12 398.318 121.21 507.508 255.92 507.508C376.56 507.508 478.939 420.281 496.35 304.888C507.922 228.192 481.64 173.82 481.64 172.898Z"/></svg> [https://www.ifo.de/en/gust-s](https://www.ifo.de/en/gust-s)
+
+---
+# Descriptive Table
+
+<div id="htmlwidget-58f2762821f8607202bd" style="width:100%;height:600px;" class="widgetframe html-widget "></div>
+<script type="application/json" data-for="htmlwidget-58f2762821f8607202bd">{"x":{"url":"index_files/figure-html//widgets/widget_descr.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+
+
+---
+name: nevertreated
+
+# Sun and Abraham with never treated 
+.center[
+&lt;img src="index/sunab_fema_math_3.png" width="50%" /&gt;
+]
+[Go back](#robustness)
+
+---
+name: borus
+# Imputation method 
+
+.center[
+&lt;img src="index/borus_fema_math_3.png" width="45%" /&gt;
+]
+
+Intuition: Borusyak et al. 2021 imputes Y(0) with not-yet treated and never treated units. [Go back](#robustness)
+
+---
+name: enrollment
+# Enrollment
+
+.center[
+&lt;img src="index/sunab_fema_enrollment.png" width="45%" /&gt;
+]
+
+[Go back](#robustness)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
