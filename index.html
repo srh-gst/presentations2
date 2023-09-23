@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Going to school during climate change: Natural disasters and student achievement</title>
+    <title>(Not) Going to school in times of climate change: Natural disasters and student achievement</title>
     <meta charset="utf-8" />
     <meta name="author" content="Sarah Gust" />
-    <meta name="date" content="2023-08-30" />
+    <meta name="date" content="2023-09-26" />
     <link href="index_files/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="index_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
     <link href="index_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
@@ -19,16 +19,16 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Going to school during climate change: Natural disasters and student achievement
+# (Not) Going to school in times of climate change: Natural disasters and student achievement
 ]
 .author[
 ### Sarah Gust
 ]
 .institute[
-### EEA Barcelona
+### VfS Conference
 ]
 .date[
-### 2023-08-30
+### 2023-09-26
 ]
 
 ---
@@ -56,6 +56,8 @@ class: center, middle, inverse, title-slide
 
 .center[
 &lt;img src="index/billion_dollar_disasters.JPG" width="70%" /&gt;
+
+Fig. 1: Billion dollar disasters
 ]
 
 Source: https://www.ncei.noaa.gov/access/billions/time-series
@@ -64,11 +66,16 @@ Source: https://www.ncei.noaa.gov/access/billions/time-series
 
 # Motivation 
 
-- 22,112 prolonged unplanned school closures in 2011-2019, affecting over 13 million students that resulted in 91.5 million student-days lost (Jahan et al. 2022)
-- Natural disasters (47%), adverse weather conditions (35%) are the most frequent reason
-- Hurricane Harvey led to &gt;3000 schools closed in four states ranging from 1-19 days
-.center[
-&lt;img src="index/closures_all.png" width="40%" /&gt;
+.pull-left[
+- 22,112 prolonged unplanned school closures in 2011-2019, affecting over 13 million students that resulted in 91.5 million student-days lost (Jahan et al. 2022).
+- 18.7% of all schools had at least one prolonged school closure ( `\(\geq\)` 5 days). 
+- Natural disasters (47%), adverse weather conditions (35%) are the most frequent reason.
+- Hurricane Harvey led to &gt;3000 schools closed in four states ranging from 1-19 days.
+]
+.pull-right[
+&lt;img src="index/closures_all.png" width="90%" /&gt;
+
+Fig. 2: School closure
 ]
 
 
@@ -79,11 +86,11 @@ Data.CDC.gov database: Prolonged Unplanned School Closures: USA, 2011-2019
 # Motivation
 
 .pull-left[
-- Frequency and costs of natural disasters have increased
-- Natural disaster can lead to school closures, breakdown of transit system
-- This can have lasting effects on students' achievement and future earnings
-- Most studies look at impact of natural disasters on economic growth but less attention on the impact on students
-- Understanding the costs of natural disasters is crucial for pre- and post-disaster investment and policies
+- Frequency and costs of natural disasters have increased.
+- This can have lasting effects on students' achievement and future earnings.
+- Natural disaster can lead to school closures, breakdown of transit system.
+- Most studies look at impact of natural disasters on economic growth in cross country analysis (eg. Dell, Jones and Olken 2012) but there is less attention on the impact on students.
+- Understanding the costs of natural disasters is crucial for pre- and post-disaster investment and policies.
 
 ]
 
@@ -97,9 +104,10 @@ Data.CDC.gov database: Prolonged Unplanned School Closures: USA, 2011-2019
 
 # This Paper
 
-- Main Question: What are the effects of natural disasters on students?
-- Data: Combining county level achievement (SEDA) with FEMA disaster declarations in the US (2009-2018)
-- Framework: TWFE using the first natural disaster in a county (Sun &amp; Abraham 2021)
+- Main Question: What are the effects of natural disasters on student achievement? 
+- Data: Combining county level student achievement (SEDA) with disaster declarations in the US from the Federal Emergency Management Agency (FEMA) (2009-2018).
+- Framework:  I estimate the effect of a natural disaster on student achievements in a TWFE frame-work.
+
 
 
 ---
@@ -107,16 +115,17 @@ Data.CDC.gov database: Prolonged Unplanned School Closures: USA, 2011-2019
 # Contribution to existing literature
 
 ### Literature on specific major disasters on schools and students 
-Sacerdote 2012, Di Pietro 2019, Holmes 2002, Spencer et al. 2016, Shidiqi et al. 2023 
-find negative short run effects on students and schools, long run effects are more mixed 
+Sacerdote (2012), Di Pietro (2019), Holmes (2002), Spencer et al. (2016), Shidiqi et al. (2023) 
+find negative short-run effects on students and schools. Evidence on long-run effects are mixed. 
 
-<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> However, most disasters are not as severe as those outliers
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> However, most disasters are not as severe as those outliers.
 
 ### Literature on school closures and absenteeism 
-Covid papers eg. Werner &amp; Woessmann 2023, teacher and student absenteeism eg. Clotfelder, Ladd, and Vigdor 2006, Miller, Murnane, and Willett 2006
+Covid papers eg. Werner &amp; Woessmann (2023), teacher and student absenteeism eg. Clotfelder, Ladd, and Vigdor (2006), Miller, Murnane, and Willett (2006)
 
-<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> Natural disaster fundamentally different from Covid, teacher and students absence suffers from endogeneity issues
-
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> Natural disaster fundamentally different from Covid. 
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> Teacher and students absence suffers from endogeneity issues.
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> Effect of both absenteeism and infrastructure damages are possible.
 
 ---
 
@@ -137,22 +146,33 @@ Covid papers eg. Werner &amp; Woessmann 2023, teacher and student absenteeism eg
 # Data: Math scores 
 
 .center[
-&lt;img src="index/math.png" width="50%" /&gt;
+&lt;img src="index/math.png" width="45%" /&gt;
+
+Fig. 3: Average Math Achievement Grade 3 to 5
 ]
 ---
-# Data on Disasters
-.pull-left[
+# Data on Disasters (I): FEMA
+
 - FEMA major disaster declarations 2009-2018 (begins in 1964)
+- The disaster declaration includes the date the disaster was declared, the area, the type of incident,denotes which assistance programme was declared. 
 - Storms (73%), Floods (20%), Fire (7%), Drought (2%), Freezing, Earthquake, Landslide, Volcanic activity  
-]
-.pull-right[
-&lt;img src="index/fema_first_year.png" width="100%" /&gt;
+- One disaster can cause multiple disaster events across different counties. 
+- For large disasters: Information of fatalities from EM-DAT via county and start date.
+- Define severe natural disasters as disasters that caused `\(\geq\)` 25 deaths (following Bounsat et al. 2020).
+
+---
+# Data on Disasters (II): FEMA
+
+.center[
+&lt;img src="index/fema_first_year.png" width="45%" /&gt;
+
+Fig. 4: First year of a natural disaster
 ]
 
 ---
 # Target Parameter 
 
-- Problem: Staggered adoption, coefficients on lead and lag indicators in a dynamic specification can be biased with TWFE
+- Problem: Staggered adoption, coefficients on lead and lag indicators in a dynamic specification can be biased with TWFE.
 - Solution: reweighting following Sun and Abraham (2021)
 
 **Cohort average treatment effect on the treated** for a treatment cohort `\(e\)` and relative time period `\(l\)` 
@@ -179,36 +199,50 @@ Take the weighted average over all estimates for `\(CATT\)` multiplied by the sa
 --
 Main assumptions: Parallel trends for all units, Limited anticipation 
 ---
-# Results: Math achievement in grade 3
+# Results
+
 .center[
-&lt;img src="index/sunab_fema_math_3.png" width="50%" /&gt;
+&lt;img src="index/sunab_fema_math_3.png" width="40%" /&gt;
+
+Fig. 5: Math achievement in grade 3 
 ]
 
 ---
-# Larger natural disasters cause more harm
 
-Number of natural disasters versus severe natural disasters (&gt;5 deaths) in the past 5 years.
+# Alternative specification 
+
+Do more disasters cause more harm?
+
+
+  `$$Y_{i,t} = \alpha_i + \lambda_t + \beta Disaster_{i,t} + \delta'(\mathbf{X}_i \lambda_t) +  \epsilon_{i,t},$$`
+where `\(Disaster_{i,t}\)` is the number and severity of a natrual disasters in the past 5 years in a county and year, `\(\alpha_i\)`  and `\(\lambda_t\)` are county and year fixed effects, `\(\mathbf{X}_i \lambda_t\)` includes an interaction between initial county population and a linear time trend. 
+
+The preferred measure of a "severe" disaster is one that caused 25 or more deaths, following Boustan et al. (2020). 
+
+---
+# Results: Larger natural disasters cause more harm
 
 .center[
-&lt;img src="index/large_small_math_3.png" width="50%" /&gt;
+&lt;img src="index/large_small_math_3.png" width="40%" /&gt;
+
+Fig. 6: Number of natural disasters in the past 5 years.
 ]
 ---
 name: robustness
 # Robustness and Sensitivity
 
-- Using never treated as [control](#nevertreated) 
-- Similar results with [Borusyak, Jaravel, and Spiess (2023)](#borus)
-- No effect on [enrollment](#enrollment)
+- Using never treated as [control](#nevertreated). 
+- Results look similar with [Borusyak, Jaravel, and Spiess (2023)](#borus).
+- What about movers? [enrollment](#enrollment). 
+- Does age matter? Similar effects for kids in [grade 4 and 5](#grade45). 
 
 ---
 # Conclusion (for now)
 
 - What is the effect of natural disasters on students?
-- Setting: US where already now 80% of the prolonged unplanned school closures are due to natural disasters and adverse weather conditions
-- Negative effect of natural disaster on student achievement in the year of the natural disasters
-- Severe natural disasters are also more detrimental for students 
-- No effect on enrollment
-- Long to-do list ;) 
+- Setting: US where already now 80% of the prolonged unplanned school closures are due to natural disasters and adverse weather conditions.
+- Evidence points to s negative effect of natural disaster on student achievement in the year of the natural disaster.
+- More natural disasters cause more harm. This effect is larger for large natural disasters.  
 
 ---
 class: middle, center, inverse
@@ -227,8 +261,8 @@ Get in contact!
 ---
 # Descriptive Table
 
-<div id="htmlwidget-a897a39350e95c63cde6" style="width:100%;height:600px;" class="widgetframe html-widget "></div>
-<script type="application/json" data-for="htmlwidget-a897a39350e95c63cde6">{"x":{"url":"index_files/figure-html//widgets/widget_descr.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-36cf2aa101ca38a876eb" style="width:100%;height:600px;" class="widgetframe html-widget "></div>
+<script type="application/json" data-for="htmlwidget-36cf2aa101ca38a876eb">{"x":{"url":"index_files/figure-html//widgets/widget_descr.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
 
 
 ---
@@ -236,7 +270,7 @@ name: nevertreated
 
 # Sun and Abraham with never treated 
 .center[
-&lt;img src="index/sunab_fema_math_3.png" width="50%" /&gt;
+&lt;img src="index/sunab_fema_math_3_nevertreated.png" width="50%" /&gt;
 ]
 [Go back](#robustness)
 
@@ -248,7 +282,19 @@ name: borus
 &lt;img src="index/borus_fema_math_3.png" width="45%" /&gt;
 ]
 
-Intuition: Borusyak et al. 2021 imputes Y(0) with not-yet treated and never treated units. [Go back](#robustness)
+Intuition: Borusyak et al. 2021 imputes Y(0) with not-yet treated and never treated units. 
+
+[Go back](#robustness)
+
+---
+name: grade45
+
+# Results for Grade 4 and 5 
+
+.center[
+&lt;img src="index/sunab_fema_math_4.png" width="40%" /&gt;&lt;img src="index/sunab_fema_math_5.png" width="40%" /&gt;
+]
+[Go back](#robustness)
 
 ---
 name: enrollment
