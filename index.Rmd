@@ -174,7 +174,7 @@ Fig. 3: Average Math Achievement Grade 3 to 5
 # Data on Disasters (I): FEMA
 
 - FEMA major disaster declarations 2009-2018 (begins in 1964)
-- The disaster declaration includes the date the disaster was declared, the area, the type of incident,denotes which assistance programme was declared. 
+- The disaster declaration includes the date the disaster was declared, the area, the type of incident, denotes which assistance programme was declared. 
 - Storms (73%), Floods (20%), Fire (7%), Drought (2%), Freezing, Earthquake, Landslide, Volcanic activity  
 - One disaster can cause multiple disaster events across different counties. 
 - For large disasters: Information of fatalities from EM-DAT via county and start date.
