@@ -97,7 +97,7 @@ Data.CDC.gov database: Prolonged Unplanned School Closures: USA, 2011-2019
 - Frequency and costs of natural disasters have increased.
 - This can have lasting effects on students' achievement and future earnings.
 - Natural disaster can lead to school closures, breakdown of transit system.
-- Most studies look at impact of natural disasters on economic growth in cross country analysis (eg. Dell, Jones and Olken 2012) but there is less attention on the impact on students.
+- Most studies look at impact of natural disasters on economic growth (eg. Dell, Jones and Olken 2012) but there is less attention on the impact on students.
 - Understanding the costs of natural disasters is crucial for pre- and post-disaster investment and policies.
 
 ]
@@ -117,7 +117,7 @@ knitr::include_graphics("index/ahrtal_sz.JPG")
 # This Paper
 
 - Main Question: What are the effects of natural disasters on student achievement? 
-- Data: Combining county level student achievement (SEDA) with disaster declarations in the US from the Federal Emergency Management Agency (FEMA) (2009-2018).
+- Data: Combining county level student achievement (SEDA) for 2009-2018 with disaster declarations in the US from the Federal Emergency Management Agency (FEMA) .
 - Framework:  I estimate the effect of a natural disaster on student achievements in a TWFE frame-work.
 
 
