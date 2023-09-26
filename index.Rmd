@@ -1,8 +1,8 @@
 ---
 title: "(Not) Going to school in times of climate change: Natural disasters and student achievement"
 author: "Sarah Gust"
-institute: "VfS Conference"
-date: "2023-09-26"
+institute: "ifo Institute and LMU"
+date: "VfS 2023/09/26"
 output: 
   xaringan::moon_reader:
     css: [default, metropolis, metropolis-fonts]
