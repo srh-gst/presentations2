@@ -1,15 +1,18 @@
 ---
-title: "(Not) Going to school in times of climate change: Natural disasters and student achievement"
-author: "Sarah Gust"
-institute: "ifo Institute and LMU"
-date: "VfS 2023/09/26"
-output: 
+title: "GUBS"
+output:
   xaringan::moon_reader:
-    css: [default, metropolis, metropolis-fonts]
+    seal: false
+    lib_dir: libs
+    css: [xaringan-themer.css, "hygge"]
     nature:
+      highlightStyle: github
+      highlightLines: true
       ratio: "16:9"
+      countIncrementalSlides: false
+      slideNumberFormat: "%current%"
 ---
-
+class: center, middle, hide-count
 
 ```{r include = FALSE}
 library(knitr)
@@ -27,12 +30,43 @@ library(png)
 library(icons)
 library(qrcode)
 library(DiagrammeR)
-library(sjPlot)
-library(DT)
-library(widgetframe)
 ```
 
-```{r xaringan-tile-view, echo=FALSE}
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(base_color = "#0d4080",
+    base_font_size = "12px",
+  text_font_size = "2rem",
+  code_font_size = "1.5rem",
+  header_font_google = google_font("Roboto"),
+  text_font_google   = google_font("Arial"),
+  code_font_google   = google_font("IBM Plex Mono"),
+  link_color = "#9c0566",
+  text_bold_color = NULL,
+  inverse_text_color = "#ffffff",
+  inverse_text_shadow = FALSE,
+  inverse_link_color = "#ffffff",
+  inverse_header_color = "#ffffff")
+```
+
+
+```{r, load_refs, include=FALSE, cache=FALSE}
+#library(RefManageR)
+#BibOptions(check.entries = FALSE,
+ #          bib.style = "authoryear",
+  #         style= "text",
+   #        hyperlink = FALSE)
+#myBib <- ReadBib("gender.bib", check = FALSE)
+```
+
+```{css echo=FALSE}
+.hide-count .remark-slide-number {
+  display: none;
+}
+
+```
+
+```{r, caption_datatable, include=FALSE, cache=FALSE}
 js <- c(
   "function(settings){",
   "  var datatable = settings.oInstance.api();",
@@ -40,245 +74,366 @@ js <- c(
   "  $(table).append('<caption style=\"caption-side: bottom\">' + caption + '</caption>');",
   "}"
 )
+
 xaringanExtra::use_tile_view()
 ```
+<br>
+<br>
 
-```{css echo=FALSE}
-.hide-count .remark-slide-number {
-  display: none;
-}
-```
-
-<style type="text/css">
-.remark-slide-content {
-    font-size: 25px;
-}
-</style>
+# Global Universal Basic Skills: 
+# Current Deficits and Implications for World Development
 
 
-# Motivation 
+<br>
 
-.center[
-```{r out.width = '70%' , echo=FALSE}
-knitr::include_graphics("index/billion_dollar_disasters.JPG") 
-```
 
-Fig. 1: Billion dollar disasters
-]
+.large[Sarah Gust &nbsp;&nbsp;&nbsp; Eric A. Hanushek  &nbsp;&nbsp;&nbsp; Ludger Woessmann]
 
-Source: https://www.ncei.noaa.gov/access/billions/time-series
+
+<br>
+CeFH Seminar   
+
+November 3, 2023
+
+<br>
+<img src="index/Logo.png" width="200px"/>
+
+<br>
+
 
 ---
 
-# Motivation 
+# Global Universal Basic Skills
 
-.pull-left[
-- 22,112 prolonged unplanned school closures in 2011-2019, affecting over 13 million students that resulted in 91.5 million student-days lost (Jahan et al. 2022).
-- 18.7% of all schools had at least one prolonged school closure ( $\geq$ 5 days). 
-- Natural disasters (47%), adverse weather conditions (35%) are the most frequent reason.
-- Hurricane Harvey led to >3000 schools closed in four states ranging from 1-19 days.
-]
-.pull-right[
-```{r out.width = '90%' , echo=FALSE}
-knitr::include_graphics("index/closures_all.png") 
-```
+Make your guess: 
 
-Fig. 2: School closure
-]
+How many children in the world do not reach basic skill levels (e.g., PISA Level 1)? 
 
+--
 
-Data.CDC.gov database: Prolonged Unplanned School Closures: USA, 2011-2019 
+## Development goal
 
----
+- Ensuring that all of the world’s youth have at least basic skills is a prime development goal by itself 
+- Also has immense importance for inclusive and sustainable world development 
+- One of United Nations’ Sustainable Development Goals (SDGs): Ensure quality education for all 
+- But: limited country coverage of int’l tests 
 
-# Motivation
+`r fontawesome::fa('long-arrow-alt-right')` unclear how many children currently fail to reach basic skills 
 
-.pull-left[
-- Frequency and costs of natural disasters have increased.
-- This can have lasting effects on students' achievement and future earnings.
-- Natural disaster can lead to school closures, breakdown of transit system.
-- Most studies look at impact of natural disasters on economic growth (eg. Dell, Jones and Olken 2012) but there is less attention on the impact on students.
-- Understanding the costs of natural disasters is crucial for pre- and post-disaster investment and policies.
+--
 
-]
+## This Paper 
 
-.pull-right[
-```{r out.width = '55%' , echo=FALSE}
-knitr::include_graphics("index/hurrycane_nyt.JPG") 
-```
+1. How far are we away from reaching basic skills for all children around the globe? 
+2. What would it mean for world development to reach global universal basic skills?
 
-```{r out.width = '55%' , echo=FALSE}
-knitr::include_graphics("index/ahrtal_sz.JPG") 
-```
-]
+`r fontawesome::fa('long-arrow-alt-right')` Draw on individual-level test data from int’l and regional student assessments to estimate share of children not achieving basic skills in each country; then show economic costs of these deficits
 
 ---
-
 # This Paper
 
-- Main Question: What are the effects of natural disasters on student achievement? 
-- Data: Combining county level student achievement (SEDA) for 2009-2018 with disaster declarations in the US from the Federal Emergency Management Agency (FEMA) .
-- Framework:  I estimate the effect of a natural disaster on student achievements in a TWFE framework.
-
-
-
----
-
-# Contribution to existing literature
-
-### Literature on specific major disasters on schools and students 
-Sacerdote (2012), Di Pietro (2019), Holmes (2002), Spencer et al. (2016), Shidiqi et al. (2023) 
-find negative short-run effects on students and schools. Evidence on long-run effects are mixed. 
-
-`r fontawesome::fa('long-arrow-alt-right')` However, most disasters are not as severe as those outliers.
-
-### Literature on school closures and absenteeism 
-Covid papers eg. Werner & Woessmann (2023), teacher and student absenteeism eg. Clotfelder, Ladd, and Vigdor (2006), Miller, Murnane, and Willett (2006)
-
-`r fontawesome::fa('long-arrow-alt-right')` Natural disaster fundamentally different from Covid. 
-`r fontawesome::fa('long-arrow-alt-right')` Teacher and students absence suffers from endogeneity issues.
-`r fontawesome::fa('long-arrow-alt-right')` Effect of both absenteeism and infrastructure damages are possible.
-
----
-
-# Data on Student Achievement
-
-## Stanford Education Data Archive (SEDA) 2009-2018 
-**District and county level average achievement** (for all students and by race/ethnicity and gender), district and county level racial/ethnic and gender achievement gaps, and district level demographic/socioeconomic data.
-
-- **Achievement is centered around zero**, so a score of zero means the district is at the average expected level of achievement within the United States. One-unit below zero means that students in the district are one grade level behind the average; one-unit above zero means that students in the district are one grade level above the average. 
-
-`r fontawesome::fa('long-arrow-alt-right')`  Use county level and focus on grade 3.
-
-
-```{r, echo=FALSE}
-#t <- read.table(file = "../tables/seda_summary.txt", sep = ",")
-#rownames(t) <- c("Achievement All Students", "Male-Female Gap", "Non-ECD-ECD Gap", "White-Black Gap", "White-Hispanic Gap")
-#t %>% head() %>%
-#  knitr::kable(format = "html", align = "ccc")  
- 
-```
-
-
----
-# Data: Math scores 
-
-.center[
-```{r out.width = '45%' , echo=FALSE}
-knitr::include_graphics("index/math.png") 
-```
-
-Fig. 3: Average Math Achievement Grade 3 to 5
-]
----
-# Data on Disasters (I): FEMA
-
-- FEMA major disaster declarations 2009-2018 (begins in 1964)
-- The disaster declaration includes the date the disaster was declared, the area, the type of incident, denotes which assistance program was declared. 
-- Storms (73%), Floods (20%), Fire (7%), Drought (2%), Freezing, Earthquake, Landslide, Volcanic activity  
-- One disaster can cause multiple disaster events across different counties. 
-- For large disasters: Information of fatalities from EM-DAT via county and start date.
-- Define severe natural disasters as disasters that caused $\geq$ 25 deaths (following Bounsat et al. 2020).
-
----
-# Data on Disasters (II): FEMA
-
-.center[
-```{r out.width = '45%' , echo=FALSE}
-knitr::include_graphics("index/fema_first_year.png") 
-```
-
-Fig. 4: First year of a natural disaster
-]
-
----
-# Target Parameter 
-
-- Problem: Staggered adoption, coefficients on lead and lag indicators in a dynamic specification can be biased with TWFE.
-- Solution: reweighting following Sun and Abraham (2021)
-
-**Cohort average treatment effect on the treated** for a treatment cohort $e$ and relative time period $l$ 
-
-$$CATT_{e,l} = E[Y_{i,e+l} - Y^{\infty}_{i,e+l}|E_i = e]$$
-
-$Y^{\infty}_{i,e+l}$ is the potential outcome of county $i$ in a world where it is untreated. 
-
-Here, a treatment cohort $e$ are counties that are treated at the same time. $l$ are periods to i's initial natural disaster.
-
----
-name: iw
-# Dynamic Treatment effect following Sun & Abraham (2021)
-Estimate the event study regression using "last treated" as control (C):
-
-  $$Y_{i,t} = \alpha_i + \lambda_t + \sum_{e \notin C} \sum_{l \neq -1} CATT_{e,l}(1\{E_i =e \} \cdot D_{i,t}^l) + \epsilon_{i,t}$$
+- **Key methodological challenge** (to be discussed next)
+  - Combine available assessment information on a common achievement scale
+  
 --
 
-### The interaction weighted estimator 
-
-Take the weighted average over all estimates for $CATT$ multiplied by the sample share of each cohort in the period $Pr(E=e)$:
-
-$$\hat v_g = \frac{1}{|g|} \sum_{l \in g} \sum_{e} \widehat{CATT_{e,l}} \hat Pr(E_i = e| E_i \in [-l, T-l])$$
+- **The available student achievement data**
+  - Tests designed to provide internationally comparable information on math and science achievement 
+  - Each test surveys representative samples of students in the participating countries
+  
 --
-Main assumptions: Parallel trends for all units, Limited anticipation 
+
+- **Analytic sample: all countries in the world that** 
+  - Have a population of at least 1 million or 
+  - Represent at least 0.01% of world GDP
+  - Exclude North Korea, Somalia, South Sudan, Syria, Venezuela, and Yemen (lack reliable population/GDP data) 
+  `r fontawesome::fa('long-arrow-alt-right')` 159 countries that cover 98.1% of world population and 99.4% of world GDP 
+  
 ---
-# Results
+class: bottom, center, inverse
+background-image: url(index/school.jpg)
+background-size: cover
 
-.center[
-```{r out.width = '40%' , echo=FALSE}
-knitr::include_graphics("index/sunab_fema_math_3.png") 
-```
 
-Fig. 5: Math achievement in grade 3 
+# 1. Constructing a Global Data Base
+
+---
+# Available Skill Data at Different Layers of Reliability 
+
+<div style="text-align: center;">
+
+<img src="index/Table1.png" width="800px"/>
+
+</div>
+
+---
+# Methods: Depicting Skills on a Common Global Scale
+
+1. **Defining** Global Universal Basic Skills: Fully achieving PISA Level 1 of 6 (420 points in math and 410 for science) 
+2. **Transforming** Achievement of Different Int’l Tests onto the PISA Scale (Layers 2+3) `r fontawesome::fa('long-arrow-alt-right')` up next
+3. Achievement in **China and India** on a Global Scale (Layer 4)
+4. **Imputation** of Achievement in Countries without Int’l Test Participation (Layer 5)
+5. Skill Levels of **Children Who Are not in School**
+
+---
+# New Method for Linking Scores Across the Different International Tests (Layer 2 and 3)
+
+Aim: transform student-level achievement on all tests into a PISA-equivalent score 
+- While introducing minimal constraints on underlying score distributions 
+- Use **student-level distributional information** in group of countries participating in any pair of test regimes
+
+--
+
+Assuming normality, convert any individual TIMSS score, $t_i$, into the corresponding PISA score, $p_i$, by:
+
+$$p_i = \frac{(t_i - m^C_{TIMSS})}{s^C_{TIMSS}} s^C_{PISA} + m^C_{PISA}$$
+
+We use the subset of countries, $C$, that takes the PISA test and TIMSS (or one of the different regional tests) and estimate means and standard deviations of the common countries for the two distributions.
+
+--
+
+- Produce measures of basic skills from resultant database on distribution of achievement 
+
+---
+# Conversion of TIMSS achievement onto the PISA scale
+
+<img src="index/kdensity_timss_pisa_w_line221002.png" width="45%"/>
+<img src="index/kdensity_timss_w_line221002.png" width="45%"/>
+
+---
+name: method
+
+# New Method for Linking Scores Across the Different International Tests (Layer 2 and 3)
+
+- Equivalently for the regional tests
+- Consideration of full underlying achievement distributions provides common support at student level
+  - Particularly relevant for countries (particularly in Sub-Saharan Africa) performing outside observed range of achievement on the broad international tests
+  - Previous transformation methods based on linear extrapolation from country mean scores tend to overestimate these countries’ achievement
+
+<img src="index/kdensity_pasec_pisa_w_line221002.png" width="40%"/>
+<img src="index/kdensity_pasec_w_line221002.png" width="40%"/>
+
+[Comparison to Estimates based on Alternative Methods](#alternative)
+---
+#Achievement in China and India on a Global Scale (Layer 4)
+
+## Sub-territorial PISA participation
+- Use additional national achievement information to estimate national achievement on PISA scale
+
+--
+
+## India 
+- Tamil Nadu and Himachal Pradesh participated in PISA 2009
+- Average score: 347.9 = rank 72 out of 74 countries/regions
+- Educational Initiative test: Tamil Nadu scores 0.032 SD below national mean
+`r fontawesome::fa('long-arrow-alt-right')` Shift PISA distribution for Tamil Nadu to estimate national distribution (89.9% below basic skills) 
+
+--
+
+## China 
+- Linking method as for Layers 2 and 3 but linking comes from province Shanghai (PISA 2012).
+- China Education Panel Study (CEPS) is a nationally representative survey of (seventh and) ninth graders in the academic year 2013-2014.
+- In addition to the nationally representative sample, the CEPS contains a random sample of students in Shanghai.
+- Cognitive ability test is not the same as the PISA achievement test: assuming a similar regional distributions of ability and achievement provides a way to directly estimate skills across the country. 
+
+---
+# Imputation of Achievement 
+
+We predict the proportion of the students below basic skills in country j as:
+
+$$\rho^j = \alpha_0 + \alpha_1 E^N_j + \alpha_2 GDP_j + v_j + \mu_j + \varepsilon_j$$
+where $E^N_j$ is net enrollment in secondary school, $GDP_j$ is gross domestic product per capita, and $v$ and $\mu$ are indicators for world regions and income groups, and $\epsilon$ is an error term. ( $R^2 = 0.835$ )
+
+---
+# Skill Level of Children who are not in School 
+
+36 % of the 15-year-olds are not in school `r fontawesome::fa('long-arrow-alt-right')` how many of them are below basic skills?
+
+- PISA-D out-of-school assessment 2018-2020
+- PIAAC Data: Dropouts from upper secondary school  
+
+`r fontawesome::fa('long-arrow-alt-right')` Assume that youths outside school perform on average at **25th percentile** of those currently in school in respective country (normal distribution with SD equivalent to in-school youths in respective country)
+
+- Perform sensitivity checks 
+
+---
+name: tableskills
+# Achievement of Basic Skills
+
+<div style="text-align: center;">
+
+<img src="index/table2.png" width="850px"/> 
+
+</div>
+
+[Sensitivity](#sensitivity_skills)
+---
+# Achievement of Basic Skills
+
+<iframe src="index/world_share_with_oos_10cat.html" width="80%" height = "100%" id="igraph" scrolling="yes" seamless="seamless" frameBorder="0">
+</iframe>
+
+---
+# The Status of World Education: Six Stylized Facts about the Distribution of Basic Skills
+
+1. At least **two thirds** of the world’s youth do not obtain basic skills. 
+
+--
+
+2. The share of children not reaching basic skills **exceeds half in 101 countries** and rises **above 90% in 37** of these countries. 
+
+--
+
+3. Even in **high-income** countries, a **quarter** of children lacks basic skills. 
+
+--
+
+4. Skill deficits reach **94% in Sub-Saharan Africa** and **90% in South Asia** but also hit 70% in Middle East and North Africa and 66% in Latin America. 
+
+--
+
+5. While skill gaps are most apparent for the third of global youth not attending secondary school, fully **62%** of the world’s secondary-school **students** fail to reach basic skills.
+
+--
+
+6. **Half** of the world’s youth live in the **35 countries** that **fail to participate in international tests** and thus lack regular and reliable foundational performance information.
+
+---
+class: bottom, center, inverse
+background-image: url(index/school.jpg)
+background-size: cover
+
+# 2. The Economic Gains from Global Universal Basic Skills
+
+---
+# The Economic Gains from Global Universal Basic Skills
+
+**Simulation** of economic gains from achieving universal basic skills
+- Use estimates of current distribution of student achievement in the world to simulate economic effects of **improved schooling policies** that aid those currently without internationally competitive skills
+- Projections incorporate prior estimates of how skills of population relate to **economic growth** from Hanushek and Woessmann (2012)
+  - Study documents series of econometric analyses that are consistent with interpretation of estimated growth coefficients as causal effect of skills on growth
+- Time path of improvement recognizes that school reform **takes time** and that transforming a country’s entire labor force takes even longer 
+
+
+---
+
+# Three Reform Scenarios
+
+.content-box-blue[
+### Scenario I:  Current students achieve at least basic skills
+
+All children who are **currently in school** reach at least basic skills.
+]
+--
+
+.content-box-blue[
+### Scenario II: Full participation at current quality
+
+The average achievement of **out-of-school children** is lifted to the average achievement of in-school children in the respective country.
+
+]
+--
+
+.content-box-blue[
+### Scenario III: **All children** achieve at least **basic skills**
+
+Full participation in secondary school with every student attaining at least the basic skill level.
+
 ]
 
----
-
-# Alternative specification 
-
-Do more disasters cause more harm?
-
-
-  $$Y_{i,t} = \alpha_i + \lambda_t + \beta Disaster_{i,t} + \delta'(\mathbf{X}_i \lambda_t) +  \epsilon_{i,t},$$
-where $Disaster_{i,t}$ is the number and severity of a natural disasters in the past 5 years in a county and year, $\alpha_i$  and $\lambda_t$ are county and year fixed effects, $\mathbf{X}_i \lambda_t$ includes an interaction between initial county population and a linear time trend. 
-
-The preferred measure of a "severe" disaster is one that caused 25 or more deaths, following Boustan et al. (2020). 
 
 ---
-# Results: Larger natural disasters cause more harm
+name: phases
+# Four Phases of Reform
 
-.center[
-```{r out.width = '40%' , echo=FALSE}
-knitr::include_graphics("index/large_small_math_3.png") 
-```
 
-Fig. 6: Number of natural disasters in the past 5 years.
-]
+### 1. School reform $(\tau = 1, …, R)$
+- During the reform period R, workers with the initial skill level in the economy are being replaced by progressively more skilled workers
+
+### 2. Main replacement $(\tau= R+1, …, W)$
+- Workers of the original skill level will be replaced by the new higher-skilled workers for the next (W-R) years (W = length of work life) 
+
+###3. Quality consolidation $(\theta = W+1, …, W+R)$
+- For the next R years, some of the variable quality workers educated during the reform period are replaced by the highest skill workers
+
+### 4. Completely high skilled $(\tau = W+R+1, …)$
+- The economy is constant quality at higher level
+
+[Show details](#math_phases)
+
 ---
-name: robustness
-# Robustness and Sensitivity
+# Economic effects of this upskilling of the labor force
 
-- Using never treated as [control](#nevertreated). 
-- Results look similar with [Borusyak, Jaravel, and Spiess (2023)](#borus).
-- Does age matter? Similar effects for kids in [grade 4 and 5](#grade45). 
-- What about movers? [enrollment](#enrollment). 
+Growth of GDP for each year throughout each of the simulations:
+
+$$g_\tau = \gamma \bar{A_{\tau}}$$
+where $\gamma$ is thes estimated impact of aggregated skills on growth rates and $\bar{A_{\tau}}$ are the skills of the workforce 
+
+--
+
+GDP for the reform simulation over the period S: 
+
+$$GDP_{\tau} = (1 + g_{\tau}) GDP^{t-1}_{reform}$$
+
+Level of GDP without the reform grows at a constant rate of potential GDP, i.e., $g_{\tau} = p$
+
+--
+
+The total value V of the reform 
+
+= sum of discounted values of annual differences between GDP with and without reform:
+
+$$V = \sum^{S}_{\tau=1} (GDP^{reform}_{\tau}-GDP^{no\:reform}_{\tau}) * (1 + d)^{-\tau}$$
 
 ---
-# Conclusion (for now)
+# Parameters of the Simulation Model 
 
-- What is the effect of natural disasters on students?
-- Setting: US where already now 80% of the prolonged unplanned school closures are due to natural disasters and adverse weather conditions.
-- Evidence points to a negative effect of natural disaster on student achievement in the year of the natural disaster.
-- More natural disasters cause more harm. This effect is larger for large natural disasters. 
+<div style="text-align: center;">
 
-Next step:
-- Which types of disaster matter?
-- Are there effects on achievement gaps? 
-- Explore the channels. 
+<img src="index/table4.PNG" width="70%"/> 
+
+</div>
+
+---
+# Projection Results 
+
+<img src="index/table5.PNG" width="100%"/> 
+
+---
+name: sensitivity 
+
+# Sensitivity 
+
+- Alternative parameter choices of the simulation model [show](#rb_param)
+- Skill level of children who are not in school [show](#rb_skill)
+- Achievement estimates of the children who are currently in school [show](#rb_skill)
+- Varying uncertainty by layer [show](#rb_skill)
+
+
+---
+
+# Conclusion 
+
+## Share of children not achieving basic skills
+- At least 2/3 of the world’s youth do not obtain basic skills. 
+- In high-income countries, 25 % of children lacks basic skills. 
+-  94 % in Sub-Saharan Africa and 90 % in South Asia
+
+--
+
+## Immense consequences for global economic development
+- The world would gain over 700 trillion US dollars in added GDP over the remaining century (11% of discounted GDP) if it were to reach global universal basic skills
+
+--
+
+## Usefulness of a globally comparative test
+- Our analysis provides a first global picture of the distribution of skills, but it comes with uncertainty.
+- Half of the world’s youth live in the 35 countriesthat fail to participate in international tests.
+- It would be a great service to world development if an international development organization were to institute a regular, internationally standardized test of representative samples of students in all countries of the global South.
+
 
 ---
 class: middle, center, inverse
-
-Get in contact!
 
 ```{r include = FALSE}
 qr <- qr_code("mailto:gust@ifo.de")
@@ -292,77 +447,97 @@ include_graphics("index/qrplot.png")
 ```
 
 
-`r fontawesome::fa('envelope')` [gust@ifo.de](mailto:gust@ifo.de) 
-`r fontawesome::fa('twitter')` [https://twitter.com/sarages](https://twitter.com/sarages)
-`r fontawesome::fa('firefox-browser')` [https://www.ifo.de/en/gust-s](https://www.ifo.de/en/gust-s)
+## Let's stay in contact!
+`r fontawesome::fa('envelope', fill = "#C34A2C")` [gust@ifo.de](mailto:gust@ifo.de) 
+`r fontawesome::fa('twitter', fill = "#C34A2C")` [https://twitter.com/sarages](https://twitter.com/sarages)
+`r fontawesome::fa('firefox-browser', fill = "#C34A2C")` [https://www.ifo.de/en/gust-s](https://www.ifo.de/en/gust-s)
 
 ---
-# Descriptive Table
+class: hide-count
+name: alternative 
 
-```{r descr, echo=FALSE}
-t <- read.csv(file = "index/seda_summary.csv", sep = ",")
-font.size <- "8pt"
-t %>% datatable(rownames = FALSE, 
-    options = list(
-      drawCallback = JS(js),
-      scrollY = 400,
-      pageLength = 20,
-        initComplete = htmlwidgets::JS(
-          "function(settings, json) {",
-          paste0("$(this.api().table().container()).css({'font-size': '", font.size, "'});"),
-          "}")
-    ),
-    height = 600,
-  ) %>% frameWidget() 
-```
+# Comparison to estimates based on alternative methods
 
+<img src="index/alternative_methods.PNG" width="70%"/> [`r fontawesome::fa('person-walking-arrow-loop-left')`](#method)
 
 ---
-name: nevertreated
+class: hide-count
+name: sensitivity_skills
 
-# Sun and Abraham with never treated 
-.center[
-```{r out.width = '50%' , echo=FALSE}
-knitr::include_graphics("index/sunab_fema_math_3_nevertreated.png") 
-```
-]
-[Go back](#robustness)
+# Sensitivity
+
+<img src="index/table3.PNG" width="80%"/> [`r fontawesome::fa('person-walking-arrow-loop-left')`](#tableskills)
 
 ---
-name: borus
-# Imputation method 
+class: hide-count
+name: chinaindia 
 
-.center[
-```{r out.width = '45%' , echo=FALSE}
-knitr::include_graphics("index/borus_fema_math_3.png") 
-```
-]
+# Sensitivity of simulation results: Lower and upper bound for China and India 
 
-Intuition: Borusyak et al. 2021 imputes Y(0) with not-yet treated and never treated units. 
-
-[Go back](#robustness)
+<img src="index/tableA5.PNG" width="80%"/> [`r fontawesome::fa('person-walking-arrow-loop-left')`](#tableskills)
 
 ---
-name: grade45
+class: hide-count
+name: math_phases
 
-# Results for Grade 4 and 5 
+# Four Phases of Reform
 
-.center[
-```{r out.width = '40%' , echo=FALSE}
-knitr::include_graphics("index/sunab_fema_math_4.png") 
-knitr::include_graphics("index/sunab_fema_math_5.png") 
-```
-]
-[Go back](#robustness)
+## Phase 1 (2020-2035)
+
+Each cohort of new, higher achieving students is only a fraction of the total labour force
+
+$$\Delta^t = g * \Delta TS *\frac{1}{40} * \frac{t - 2020}{15}+ \Delta^{t-1}$$
+
+with
+- $\Delta^t =$ additional growth in GDP per capita due to reform in year $t$
+- $g =$ 1.98% of additional average annual growth for a one standard deviation increase in test scores 
+- $\Delta TS =$ increase in average test score due to reform
+- 40 years working life
+- 15 years reform duration 
 
 ---
-name: enrollment
-# Enrollment
+class: hide-count
 
-.center[
-```{r out.width = '45%' , echo=FALSE}
-knitr::include_graphics("index/sunab_fema_enrollment.png") 
-```
-]
+## Phase 2 (2036-2060)
 
-[Go back](#robustness)
+Reform fully enacted but workers with lower level of skills in working force
+
+$$\Delta^t = g * \Delta TS *\frac{1}{40}+ \Delta^{t-1}$$
+--
+class: hide-count
+
+## Phase 3 (2061-2075)
+
+Labor market cohorts which only partially profited from reform are replaced with new cohorts
+
+$$\Delta^t = g * \Delta TS *\frac{1}{40} - (\Delta^{t-40} - \Delta^{t-41}) + \Delta^{t-1}$$
+--
+class: hide-count
+
+## Phase 4 (after 2075)
+
+Whole workforce has gone through reform 
+
+$$\Delta^t = g * \Delta TS$$
+
+[`r fontawesome::fa('person-walking-arrow-loop-left')`](#phases)
+
+---
+class: hide-count
+name: rb_param
+
+# Sensitivity of simulation results: Alternative parameter choices
+
+<img src="index/tableA7.PNG" width="80%"/> [`r fontawesome::fa('person-walking-arrow-loop-left')`](#sensitivity)
+
+---
+class: hide-count
+name: rb_skill
+
+# Sensitivity of simulation results: Measurement error in skill estimates
+
+<img src="index/tableA8.PNG" width="75%"/>  [`r fontawesome::fa('person-walking-arrow-loop-left')`](#sensitivity)
+
+
+
+
