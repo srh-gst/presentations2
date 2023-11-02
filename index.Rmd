@@ -166,7 +166,7 @@ background-size: cover
 
 <div style="text-align: center;">
 
-<img src="index/Table1.png" width="800px"/>
+<img src="index/table1.png" width="800px"/>
 
 </div>
 
