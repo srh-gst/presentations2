@@ -194,9 +194,8 @@ background-size: cover
 ---
 # New Method for Linking Scores Across the Different International Tests (Layer 2 and 3)
 
-Aim: transform student-level achievement on all tests into a PISA-equivalent score 
-- While introducing minimal constraints on underlying score distributions 
-- Use **student-level distributional information** in group of countries participating in any pair of test regimes
+Aim: transform student-level achievement of all tests into a PISA-equivalent score 
+- Use **student-level distributional information** 
 
 --
 
@@ -222,8 +221,8 @@ name: method
 # New Method for Linking Scores Across the Different International Tests (Layer 2 and 3)
 
 - Equivalently for the regional tests
-- Consideration of full underlying achievement distributions provides common support at student level
-  - Particularly relevant for countries (particularly in Sub-Saharan Africa) performing outside observed range of achievement on the broad international tests.
+- Consideration of full underlying achievement distributions 
+  - Particularly relevant for countries performing outside observed range of achievement on the broad international tests.
   - Previous transformation methods based on linear extrapolation from country mean scores tend to overestimate these countries’ achievement. [Alternative methods.](#alternative)
 
 <div style="text-align: center;">
@@ -331,14 +330,15 @@ background-size: cover
 # 2. The Economic Gains from Global Universal Basic Skills
 
 ---
+
 # The Economic Gains from Global Universal Basic Skills
 
 **Simulation** of economic gains from achieving universal basic skills
-- Use estimates of current distribution of student achievement in the world to simulate economic effects of **improved schooling policies** that aid those currently without internationally competitive skills
+- Economic effects of **improved schooling policies** that aid those currently without internationally competitive skills.
 
 --
-- Projections incorporate prior estimates of how skills of population relate to **economic growth** from Hanushek and Woessmann (2012)
-  - Study documents series of econometric analyses that are consistent with interpretation of estimated growth coefficients as causal effect of skills on growth
+- Prior estimates of how skills of population relate to **economic growth** from Hanushek and Woessmann (2012)
+  - Series of econometric analyses that are consistent with a causal effect of skills on growth
 
 --
 - Time path of improvement recognizes that school reform **takes time** and that transforming a country’s entire labor force takes even longer 
@@ -475,7 +475,7 @@ name: sensitivity
 --
     1. Past research has shown that farming, even at a low level, can benefit as more educated farmers make better crop and planting decisions.
 --
-    2. Economies have transformed through production in manufacturing with increasing value-added sectors and through the movement toward more information-based activities.
+    2. Economies have transformed with increasing value-added sectors and a movement towards more information-based activities.
 --
 
 - While not certain, it seems natural to conclude that industry develops in ways that match the available skills of the potential labor force.
@@ -490,7 +490,7 @@ name: sensitivity
 
 ## Usefulness of a globally comparative test
 - Our analysis provides a first global picture of the distribution of skills, but it comes with uncertainty.
-- Half of the world’s youth live in the 35 countriesthat fail to participate in international tests.
+- Half of the world’s youth live in the 35 countries that fail to participate in international tests.
 - It would be a great service to world development if an international development organization were to institute a regular, internationally standardized test of representative samples of students in all countries of the global South.
 
 
