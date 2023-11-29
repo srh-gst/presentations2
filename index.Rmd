@@ -108,7 +108,7 @@ November 29, 2023
 ---
 
 
-# Motivation 
+# Intro
 
 .center[
 ### Fig. 1: Billion-dollar disasters in the US 1980 to 2021
@@ -120,7 +120,7 @@ knitr::include_graphics("index/billion_dollar_disasters.JPG")
 
 ---
 
-# Motivation 
+# Intro
 
 .pull-left[
 - 22,112 prolonged unplanned school closures in 2011-2019, affecting over 13 million students that resulted in 91.5 million student-days lost (Jahan et al. 2022).
