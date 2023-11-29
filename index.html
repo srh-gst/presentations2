@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Empirical Seminar</title>
+    <title>Center Seminar</title>
     <meta charset="utf-8" />
     <link href="libs/remark-css-0.0.1/hygge.css" rel="stylesheet" />
     <link href="libs/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
@@ -47,9 +47,9 @@ class: center, middle, hide-count
 
 
 &lt;br&gt;
-Empirical Student Seminar   
+Center Seminar  
 
-November 29, 2023
+November 30, 2023
 
 &lt;br&gt;
 &lt;img src="index/Logo.png" width="200px"/&gt;
@@ -60,17 +60,17 @@ November 29, 2023
 ---
 
 
-# Intro
+# Motivation 
 
 .center[
-### Fig. 1: Billion-dollar disasters in the US 1980 to 2021
+### Fig. 1: Billion dollar disasters
 &lt;img src="index/billion_dollar_disasters.JPG" width="70%" /&gt;
 ]
 .footnotesize[Source: https://www.ncei.noaa.gov/access/billions/time-series]
 
 ---
 
-# Intro
+# Motivation 
 
 .pull-left[
 - 22,112 prolonged unplanned school closures in 2011-2019, affecting over 13 million students that resulted in 91.5 million student-days lost (Jahan et al. 2022).
@@ -79,7 +79,7 @@ November 29, 2023
 - Hurricane Harvey led to &gt;3000 schools closed in four states ranging from 1-19 days.
 ]
 .pull-right[
-### Fig. 2: School closures in the US
+### Fig. 2: School closure
 &lt;img src="index/closures_all.png" width="90%" /&gt;
 ]
 
@@ -94,7 +94,6 @@ November 29, 2023
 - Frequency and costs of natural disasters have increased.
 - Natural disaster can lead to school closures, breakdown of transit system.
 - Potentially lasting effects on students' achievement.
-- Student achievement matters for individual (labor market) returns and economic growth. 
 - Understanding the costs of natural disasters is crucial for pre- and post-disaster investment and policies.
 
 ]
@@ -106,6 +105,7 @@ November 29, 2023
 ]
 
 ---
+
 
 # This Paper
 
@@ -123,7 +123,7 @@ November 29, 2023
       
   <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> Sun &amp; Abraham DiD event study design with first year of natural disaster
       
-  <svg aria-hidden="true" role="img" viewBox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"/></svg> How does the effect evolve over time?, assess common trends 
+  <svg aria-hidden="true" role="img" viewBox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"/></svg> How does the effect evolve over time? Assess common trends.
 
 --
 
@@ -137,14 +137,13 @@ November 29, 2023
 
 
 ---
-exclude: false
 
 # Data on Student Achievement
 
 ## Stanford Education Data Archive (SEDA) 2009-2018 
 **District and county level average achievement** (for all students and by race/ethnicity and gender), district and county level racial/ethnic and gender achievement gaps, and district level demographic/socioeconomic data.
 
-- **Achievement is centered around zero**, so a score of zero means the district is at the average expected level of achievement within the United States. One-unit below zero means that students in the district are one grade level behind the average; one-unit above zero means that students in the district are one grade level above the average. 
+- **Achievement is centered around zero**, so a score of zero means the county is at the average expected level of achievement within the United States. One-unit below zero means that students in the county are one grade level behind the average; one-unit above zero means that students in the county are one grade level above the average. 
 
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg>  Use county level and focus on grade 3.
 
@@ -165,7 +164,7 @@ exclude: false
 - OpenFEMA Dataset by the Federal Emergency Management Agency (FEMA) of the Department
 of Homeland Security
 - Major disaster declarations 2009-2018 (begins in 1964)
-- A disaster declaration is only made (by the President of the United States) in strongly affected areas that struggle to deal with the consequences <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> rules out inconsequential natural disasters. 
+- A didaster declaration is only made (by the President of the United States) in strongly affected areas that struggle to deal with the consequences <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> rules out inconsequential natural disasters. 
 - The disaster declaration includes the date the disaster was declared, the area, the type of incident, denotes which assistance program was declared. 
 - Storms (73%), Floods (20%), Fire (7%), Drought (2%), Freezing, Earthquake, Landslide, Volcanic activity. 
 - One disaster can cause multiple disaster events across different counties. 
@@ -188,10 +187,41 @@ of Homeland Security
 ]
 
 ---
-# Target Parameter 
+# Contribution to existing literature
+
+### Literature on school closures and absenteeism 
+Covid papers eg. Werner &amp; Woessmann (2023), teacher and student absenteeism eg. Clotfelder, Ladd, and Vigdor (2006), Miller, Murnane, and Willett (2006)
+
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> Natural disaster fundamentally different from Covid. 
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> Teacher and students absence suffers from endogeneity issues.
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> Effect of both absenteeism and infrastructure damages are possible.
+
+---
+
+### Literature on specific major disasters on schools and students 
+- Sacerdote (2012) for students that were forced to switch school after hurricane Katrina and Rita, there was a sharp decline in test scores in the first year after the hurricanes. Long term effects are mixed
+- Di Pietro (2019): earthquake in Italy reduced students’ probability of graduating on-time and slightly increased students’ probability of dropping out. 
+
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> However, most disasters are not as severe as those outliers.
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> Focus on young kids (grade 3).
+
+--
+
+- Husted, Opper, Park (2023): very similar paper (same data), focus on static effect:  
+
+`\(\Delta y_{i,t} = \alpha \sum \tau_k D^k_{c,t} + \theta_t + \epsilon_{i,t}\)` 
+
+where `\(D^k_{c,t}\)` is an indicator fuction of whether county c in year t is in bin k. The five bins are no, small, medium, large, very large disasters. `\(\Delta y_{i,t}\)` is the year-to-year change in outcome. Effect on migration, average test score, and post secondary enrollment. 
+
+---
+# Model 
+
+We're interested in the dynamic effects:  
 
 - Problem: Staggered adoption, coefficients on lead and lag indicators in a dynamic specification can be biased with TWFE.
 - Solution: reweighting following Sun and Abraham (2021)
+
+## Target parameter 
 
 **Cohort average treatment effect on the treated** for a treatment cohort `\(e\)` and relative time period `\(l\)` 
 
@@ -220,9 +250,10 @@ Main assumptions: Parallel trends for all units, Limited anticipation
 # Results
 
 .center[
-### Fig. 5: Math achievement in grade 3 
-&lt;img src="index/sunab_fema_math_3.png" width="40%" /&gt;
+### Fig. 5: Math achievement in grade 3, 4, and 5 
+&lt;img src="index/sunab_fema_math_3.png" width="33%" /&gt;&lt;img src="index/sunab_fema_math_4.png" width="33%" /&gt;&lt;img src="index/sunab_fema_math_5.png" width="33%" /&gt;
 ]
+
 ---
 
 # Alternative specification 
@@ -266,16 +297,14 @@ name: robustness
 
 - Using never treated as [control](#nevertreated). 
 - Results look similar with [Borusyak, Jaravel, and Spiess (2023)](#borus).
-- Does age matter? Similar effects for kids in [grade 4 and 5](#grade45). 
+
+## Mechanism 
+- Effect on net migration indicates an increase in moving.
+- Mental health (open)
+- Other?
 
 ---
-# Mechanism
-
-- School closures are associated with lower achievement.
-- Net migration indicates an increase in moving. 
-
----
-# Effect of net migration 
+# Mechanism: Effect of net migration 
 
 .center[
 ### Fig. 8: Results for net migration (Sun and Abraham) 
@@ -289,7 +318,6 @@ name: robustness
 - Setting: US where already now 80% of the prolonged unplanned school closures are due to natural disasters and adverse weather conditions.
 - Evidence points to a negative effect of natural disaster on student achievement.
 - More natural disasters cause more harm. This effect is larger for large natural disasters. 
-- There is a direct effect of school closures on student achievement.
 - However, parts of the effect could be explained by out migration. 
 
 Next step:
@@ -298,22 +326,14 @@ Next step:
 ---
 class: middle, center, inverse
 
-Coffee? <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M88 0C74.7 0 64 10.7 64 24c0 38.9 23.4 59.4 39.1 73.1l1.1 1C120.5 112.3 128 119.9 128 136c0 13.3 10.7 24 24 24s24-10.7 24-24c0-38.9-23.4-59.4-39.1-73.1l-1.1-1C119.5 47.7 112 40.1 112 24c0-13.3-10.7-24-24-24zM32 192c-17.7 0-32 14.3-32 32V416c0 53 43 96 96 96H288c53 0 96-43 96-96h16c61.9 0 112-50.1 112-112s-50.1-112-112-112H352 32zm352 64h16c26.5 0 48 21.5 48 48s-21.5 48-48 48H384V256zM224 24c0-13.3-10.7-24-24-24s-24 10.7-24 24c0 38.9 23.4 59.4 39.1 73.1l1.1 1C232.5 112.3 240 119.9 240 136c0 13.3 10.7 24 24 24s24-10.7 24-24c0-38.9-23.4-59.4-39.1-73.1l-1.1-1C231.5 47.7 224 40.1 224 24z"/></svg>
+Thank you!
 
-
-
-&lt;img src="index/qrplot.png" width="20%" /&gt;
-
-
-<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/></svg> [gust@ifo.de](mailto:gust@ifo.de) 
-<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> [https://twitter.com/sarages](https://twitter.com/sarages)
-<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M130.22 127.548C130.38 127.558 130.3 127.558 130.22 127.548V127.548ZM481.64 172.898C471.03 147.398 449.56 119.898 432.7 111.168C446.42 138.058 454.37 165.048 457.4 185.168C457.405 185.306 457.422 185.443 457.45 185.578C429.87 116.828 383.098 89.1089 344.9 28.7479C329.908 5.05792 333.976 3.51792 331.82 4.08792L331.7 4.15792C284.99 30.1109 256.365 82.5289 249.12 126.898C232.503 127.771 216.219 131.895 201.19 139.035C199.838 139.649 198.736 140.706 198.066 142.031C197.396 143.356 197.199 144.87 197.506 146.323C197.7 147.162 198.068 147.951 198.586 148.639C199.103 149.327 199.76 149.899 200.512 150.318C201.264 150.737 202.096 150.993 202.954 151.071C203.811 151.148 204.676 151.045 205.491 150.768L206.011 150.558C221.511 143.255 238.408 139.393 255.541 139.238C318.369 138.669 352.698 183.262 363.161 201.528C350.161 192.378 326.811 183.338 304.341 187.248C392.081 231.108 368.541 381.784 246.951 376.448C187.487 373.838 149.881 325.467 146.421 285.648C146.421 285.648 157.671 243.698 227.041 243.698C234.541 243.698 255.971 222.778 256.371 216.698C256.281 214.698 213.836 197.822 197.281 181.518C188.434 172.805 184.229 168.611 180.511 165.458C178.499 163.75 176.392 162.158 174.201 160.688C168.638 141.231 168.399 120.638 173.51 101.058C148.45 112.468 128.96 130.508 114.8 146.428H114.68C105.01 134.178 105.68 93.7779 106.25 85.3479C106.13 84.8179 99.022 89.0159 98.1 89.6579C89.5342 95.7103 81.5528 102.55 74.26 110.088C57.969 126.688 30.128 160.242 18.76 211.318C14.224 231.701 12 255.739 12 263.618C12 398.318 121.21 507.508 255.92 507.508C376.56 507.508 478.939 420.281 496.35 304.888C507.922 228.192 481.64 173.82 481.64 172.898Z"/></svg> [https://www.ifo.de/en/gust-s](https://www.ifo.de/en/gust-s)
 
 ---
 # Descriptive Table
 
-<div id="htmlwidget-6cb8fc5be1ef9bc106b7" style="width:100%;height:600px;" class="widgetframe html-widget "></div>
-<script type="application/json" data-for="htmlwidget-6cb8fc5be1ef9bc106b7">{"x":{"url":"index_files/figure-html//widgets/widget_descr.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-120c3723686278caeb69" style="width:100%;height:600px;" class="widgetframe html-widget "></div>
+<script type="application/json" data-for="htmlwidget-120c3723686278caeb69">{"x":{"url":"index_files/figure-html//widgets/widget_descr.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
 
 ---
 name: cost
@@ -330,7 +350,7 @@ name: nevertreated
 
 # Sun and Abraham with never treated 
 .center[
-&lt;img src="index/sunab_fema_math_3_nevertreated.png" width="50%" /&gt;
+&lt;img src="index/sunab_fema_math_3_nevertreated.png" width="40%" /&gt;
 ]
 [Go back](#robustness)
 
@@ -339,21 +359,11 @@ name: borus
 # Imputation method 
 
 .center[
-&lt;img src="index/borus_fema_math_3.png" width="45%" /&gt;
+&lt;img src="index/borus_fema_math_3.png" width="40%" /&gt;
 ]
 
 Intuition: Borusyak et al. 2021 imputes Y(0) with not-yet treated and never treated units. 
 
-[Go back](#robustness)
-
----
-name: grade45
-
-# Results for Grade 4 and 5 
-
-.center[
-&lt;img src="index/sunab_fema_math_4.png" width="40%" /&gt;&lt;img src="index/sunab_fema_math_5.png" width="40%" /&gt;
-]
 [Go back](#robustness)
 
 ---
@@ -367,23 +377,14 @@ name: enrollment
 [Go back](#robustness)
 
 ---
+name:types
+# Disaster types
 
-# Contribution to existing literature
+.center[
+&lt;img src="index/disastertype_math_3.png" width="45%" /&gt;
+]
 
-### Literature on specific major disasters on schools and students 
-- Sacerdote (2012) for students that were forced to switch school after hurricane Katrina and Rita, there was a sharp decline in test scores in the first year after the hurricanes. Long term effects are mixed
-- Di Pietro (2019): earthquake in Italy reduced students’ probability of graduating on-time and slightly increased students’ probability of dropping out. 
-
-<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> However, most disasters are not as severe as those outliers.
-<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> Focus on young kids (grade 3).
-
-
-### Literature on school closures and absenteeism 
-Covid papers eg. Werner &amp; Woessmann (2023), teacher and student absenteeism eg. Clotfelder, Ladd, and Vigdor (2006), Miller, Murnane, and Willett (2006)
-
-<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> Natural disaster fundamentally different from Covid. 
-<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> Teacher and students absence suffers from endogeneity issues.
-<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> Effect of both absenteeism and infrastructure damages are possible.
+[Go back](#robustness)
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

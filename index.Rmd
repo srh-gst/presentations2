@@ -1,5 +1,5 @@
 ---
-title: "Empirical Seminar"
+title: "Center Seminar"
 output:
   xaringan::moon_reader:
     seal: false
@@ -95,9 +95,9 @@ xaringanExtra::use_tile_view()
 
 
 <br>
-Empirical Student Seminar   
+Center Seminar  
 
-November 29, 2023
+November 30, 2023
 
 <br>
 <img src="index/Logo.png" width="200px"/>
@@ -108,10 +108,10 @@ November 29, 2023
 ---
 
 
-# Intro
+# Motivation 
 
 .center[
-### Fig. 1: Billion-dollar disasters in the US 1980 to 2021
+### Fig. 1: Billion dollar disasters
 ```{r out.width = '70%' , echo=FALSE}
 knitr::include_graphics("index/billion_dollar_disasters.JPG") 
 ```
@@ -120,7 +120,7 @@ knitr::include_graphics("index/billion_dollar_disasters.JPG")
 
 ---
 
-# Intro
+# Motivation 
 
 .pull-left[
 - 22,112 prolonged unplanned school closures in 2011-2019, affecting over 13 million students that resulted in 91.5 million student-days lost (Jahan et al. 2022).
@@ -129,7 +129,7 @@ knitr::include_graphics("index/billion_dollar_disasters.JPG")
 - Hurricane Harvey led to >3000 schools closed in four states ranging from 1-19 days.
 ]
 .pull-right[
-### Fig. 2: School closures in the US
+### Fig. 2: School closure
 ```{r out.width = '90%' , echo=FALSE}
 knitr::include_graphics("index/closures_all.png") 
 ```
@@ -146,7 +146,6 @@ knitr::include_graphics("index/closures_all.png")
 - Frequency and costs of natural disasters have increased.
 - Natural disaster can lead to school closures, breakdown of transit system.
 - Potentially lasting effects on students' achievement.
-- Student achievement matters for individual (labor market) returns and economic growth. 
 - Understanding the costs of natural disasters is crucial for pre- and post-disaster investment and policies.
 
 ]
@@ -162,6 +161,7 @@ knitr::include_graphics("index/ahrtal_sz.JPG")
 ]
 
 ---
+
 
 # This Paper
 
@@ -179,7 +179,7 @@ knitr::include_graphics("index/ahrtal_sz.JPG")
       
   `r fontawesome::fa('long-arrow-alt-right')` Sun & Abraham DiD event study design with first year of natural disaster
       
-  `r fontawesome::fa('lightbulb')` How does the effect evolve over time?, assess common trends 
+  `r fontawesome::fa('lightbulb')` How does the effect evolve over time? Assess common trends.
 
 --
 
@@ -193,14 +193,13 @@ knitr::include_graphics("index/ahrtal_sz.JPG")
 
 
 ---
-exclude: false
 
 # Data on Student Achievement
 
 ## Stanford Education Data Archive (SEDA) 2009-2018 
 **District and county level average achievement** (for all students and by race/ethnicity and gender), district and county level racial/ethnic and gender achievement gaps, and district level demographic/socioeconomic data.
 
-- **Achievement is centered around zero**, so a score of zero means the district is at the average expected level of achievement within the United States. One-unit below zero means that students in the district are one grade level behind the average; one-unit above zero means that students in the district are one grade level above the average. 
+- **Achievement is centered around zero**, so a score of zero means the county is at the average expected level of achievement within the United States. One-unit below zero means that students in the county are one grade level behind the average; one-unit above zero means that students in the county are one grade level above the average. 
 
 `r fontawesome::fa('long-arrow-alt-right')`  Use county level and focus on grade 3.
 
@@ -229,7 +228,7 @@ knitr::include_graphics("index/math.png")
 - OpenFEMA Dataset by the Federal Emergency Management Agency (FEMA) of the Department
 of Homeland Security
 - Major disaster declarations 2009-2018 (begins in 1964)
-- A disaster declaration is only made (by the President of the United States) in strongly affected areas that struggle to deal with the consequences `r fontawesome::fa('long-arrow-alt-right')` rules out inconsequential natural disasters. 
+- A didaster declaration is only made (by the President of the United States) in strongly affected areas that struggle to deal with the consequences `r fontawesome::fa('long-arrow-alt-right')` rules out inconsequential natural disasters. 
 - The disaster declaration includes the date the disaster was declared, the area, the type of incident, denotes which assistance program was declared. 
 - Storms (73%), Floods (20%), Fire (7%), Drought (2%), Freezing, Earthquake, Landslide, Volcanic activity. 
 - One disaster can cause multiple disaster events across different counties. 
@@ -258,10 +257,41 @@ knitr::include_graphics("index/fema_sumpast5.png")
 ]
 
 ---
-# Target Parameter 
+# Contribution to existing literature
+
+### Literature on school closures and absenteeism 
+Covid papers eg. Werner & Woessmann (2023), teacher and student absenteeism eg. Clotfelder, Ladd, and Vigdor (2006), Miller, Murnane, and Willett (2006)
+
+`r fontawesome::fa('long-arrow-alt-right')` Natural disaster fundamentally different from Covid. 
+`r fontawesome::fa('long-arrow-alt-right')` Teacher and students absence suffers from endogeneity issues.
+`r fontawesome::fa('long-arrow-alt-right')` Effect of both absenteeism and infrastructure damages are possible.
+
+---
+
+### Literature on specific major disasters on schools and students 
+- Sacerdote (2012) for students that were forced to switch school after hurricane Katrina and Rita, there was a sharp decline in test scores in the first year after the hurricanes. Long term effects are mixed
+- Di Pietro (2019): earthquake in Italy reduced students’ probability of graduating on-time and slightly increased students’ probability of dropping out. 
+
+`r fontawesome::fa('long-arrow-alt-right')` However, most disasters are not as severe as those outliers.
+`r fontawesome::fa('long-arrow-alt-right')` Focus on young kids (grade 3).
+
+--
+
+- Husted, Opper, Park (2023): very similar paper (same data), focus on static effect:  
+
+$\Delta y_{i,t} = \alpha \sum \tau_k D^k_{c,t} + \theta_t + \epsilon_{i,t}$ 
+
+where $D^k_{c,t}$ is an indicator fuction of whether county c in year t is in bin k. The five bins are no, small, medium, large, very large disasters. $\Delta y_{i,t}$ is the year-to-year change in outcome. Effect on migration, average test score, and post secondary enrollment. 
+
+---
+# Model 
+
+We're interested in the dynamic effects:  
 
 - Problem: Staggered adoption, coefficients on lead and lag indicators in a dynamic specification can be biased with TWFE.
 - Solution: reweighting following Sun and Abraham (2021)
+
+## Target parameter 
 
 **Cohort average treatment effect on the treated** for a treatment cohort $e$ and relative time period $l$ 
 
@@ -290,11 +320,14 @@ Main assumptions: Parallel trends for all units, Limited anticipation
 # Results
 
 .center[
-### Fig. 5: Math achievement in grade 3 
-```{r out.width = '40%' , echo=FALSE}
+### Fig. 5: Math achievement in grade 3, 4, and 5 
+```{r out.width = '33%' , echo=FALSE}
 knitr::include_graphics("index/sunab_fema_math_3.png") 
+knitr::include_graphics("index/sunab_fema_math_4.png") 
+knitr::include_graphics("index/sunab_fema_math_5.png") 
 ```
 ]
+
 ---
 
 # Alternative specification 
@@ -343,16 +376,14 @@ name: robustness
 
 - Using never treated as [control](#nevertreated). 
 - Results look similar with [Borusyak, Jaravel, and Spiess (2023)](#borus).
-- Does age matter? Similar effects for kids in [grade 4 and 5](#grade45). 
+
+## Mechanism 
+- Effect on net migration indicates an increase in moving.
+- Mental health (open)
+- Other?
 
 ---
-# Mechanism
-
-- School closures are associated with lower achievement.
-- Net migration indicates an increase in moving. 
-
----
-# Effect of net migration 
+# Mechanism: Effect of net migration 
 
 .center[
 ### Fig. 8: Results for net migration (Sun and Abraham) 
@@ -369,7 +400,6 @@ knitr::include_graphics("index/sunab_fema_netmig.png")
 - Setting: US where already now 80% of the prolonged unplanned school closures are due to natural disasters and adverse weather conditions.
 - Evidence points to a negative effect of natural disaster on student achievement.
 - More natural disasters cause more harm. This effect is larger for large natural disasters. 
-- There is a direct effect of school closures on student achievement.
 - However, parts of the effect could be explained by out migration. 
 
 Next step:
@@ -378,23 +408,8 @@ Next step:
 ---
 class: middle, center, inverse
 
-Coffee? `r fontawesome::fa('mug-hot')`
+Thank you!
 
-```{r include = FALSE}
-qr <- qr_code("mailto:gust@ifo.de")
-png(filename="index/qrplot.png")
-plot(qr)
-dev.off()
-```
-
-```{r, echo=FALSE, out.width = "20%",fig.show = "hold"}
-include_graphics("index/qrplot.png")
-```
-
-
-`r fontawesome::fa('envelope')` [gust@ifo.de](mailto:gust@ifo.de) 
-`r fontawesome::fa('twitter')` [https://twitter.com/sarages](https://twitter.com/sarages)
-`r fontawesome::fa('firefox-browser')` [https://www.ifo.de/en/gust-s](https://www.ifo.de/en/gust-s)
 
 ---
 # Descriptive Table
@@ -433,7 +448,7 @@ name: nevertreated
 
 # Sun and Abraham with never treated 
 .center[
-```{r out.width = '50%' , echo=FALSE}
+```{r out.width = '40%' , echo=FALSE}
 knitr::include_graphics("index/sunab_fema_math_3_nevertreated.png") 
 ```
 ]
@@ -444,26 +459,13 @@ name: borus
 # Imputation method 
 
 .center[
-```{r out.width = '45%' , echo=FALSE}
+```{r out.width = '40%' , echo=FALSE}
 knitr::include_graphics("index/borus_fema_math_3.png") 
 ```
 ]
 
 Intuition: Borusyak et al. 2021 imputes Y(0) with not-yet treated and never treated units. 
 
-[Go back](#robustness)
-
----
-name: grade45
-
-# Results for Grade 4 and 5 
-
-.center[
-```{r out.width = '40%' , echo=FALSE}
-knitr::include_graphics("index/sunab_fema_math_4.png") 
-knitr::include_graphics("index/sunab_fema_math_5.png") 
-```
-]
 [Go back](#robustness)
 
 ---
@@ -479,20 +481,13 @@ knitr::include_graphics("index/sunab_fema_enrollment.png")
 [Go back](#robustness)
 
 ---
+name:types
+# Disaster types
 
-# Contribution to existing literature
+.center[
+```{r out.width = '45%' , echo=FALSE}
+knitr::include_graphics("index/disastertype_math_3.png") 
+```
+]
 
-### Literature on specific major disasters on schools and students 
-- Sacerdote (2012) for students that were forced to switch school after hurricane Katrina and Rita, there was a sharp decline in test scores in the first year after the hurricanes. Long term effects are mixed
-- Di Pietro (2019): earthquake in Italy reduced students’ probability of graduating on-time and slightly increased students’ probability of dropping out. 
-
-`r fontawesome::fa('long-arrow-alt-right')` However, most disasters are not as severe as those outliers.
-`r fontawesome::fa('long-arrow-alt-right')` Focus on young kids (grade 3).
-
-
-### Literature on school closures and absenteeism 
-Covid papers eg. Werner & Woessmann (2023), teacher and student absenteeism eg. Clotfelder, Ladd, and Vigdor (2006), Miller, Murnane, and Willett (2006)
-
-`r fontawesome::fa('long-arrow-alt-right')` Natural disaster fundamentally different from Covid. 
-`r fontawesome::fa('long-arrow-alt-right')` Teacher and students absence suffers from endogeneity issues.
-`r fontawesome::fa('long-arrow-alt-right')` Effect of both absenteeism and infrastructure damages are possible.
+[Go back](#robustness)
