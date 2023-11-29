@@ -111,11 +111,10 @@ November 30, 2023
 # Motivation 
 
 .center[
+### Fig. 1: Billion dollar disasters
 ```{r out.width = '70%' , echo=FALSE}
 knitr::include_graphics("index/billion_dollar_disasters.JPG") 
 ```
-
-    Fig. 1: Billion dollar disasters
 ]
 .footnotesize[Source: https://www.ncei.noaa.gov/access/billions/time-series]
 
@@ -130,11 +129,10 @@ knitr::include_graphics("index/billion_dollar_disasters.JPG")
 - Hurricane Harvey led to >3000 schools closed in four states ranging from 1-19 days.
 ]
 .pull-right[
+### Fig. 2: School closure
 ```{r out.width = '90%' , echo=FALSE}
 knitr::include_graphics("index/closures_all.png") 
 ```
-
-                Fig. 2: School closure
 ]
 
 
@@ -167,9 +165,38 @@ knitr::include_graphics("index/ahrtal_sz.JPG")
 
 # This Paper
 
-- Main Question: What are the effects of natural disasters on student achievement? 
-- Data: Combining county level student achievement (SEDA) for 2009-2018 with disaster declarations in the US from the Federal Emergency Management Agency (FEMA) .
-- Framework:  I estimate the effect of a natural disaster on student achievements in a TWFE framework.
+**Main Question:** What are the effects of natural disasters on student achievement? 
+
+--
+
+## How? 
+
+- **Data:** Combining county level student achievement (SEDA) for 2009-2018 with disaster declarations in the US from the Federal Emergency Management Agency (FEMA).
+
+--
+
+- **Framework:**  Exploit variation across US counties and years in TWFE setting 
+      
+  `r fontawesome::fa('long-arrow-alt-right')` **binary treatment:** first year of natural disaster
+      
+  `r fontawesome::fa('lightbulb')` DiD event study design, how does the effect evolve over time?, assess common trends 
+
+--
+
+  `r fontawesome::fa('long-arrow-alt-right')` **continous treatment:** number and severity of natural disasters in the past five years 
+
+  `r fontawesome::fa('lightbulb')` Are more disasters more detrimental or are counties adapting? 
+
+--
+
+  `r fontawesome::fa('lightbulb')` Do larger disasters cause more harm?
+
+--
+
+  `r fontawesome::fa('lightbulb')` Which types of disasters are harmful? 
+
+
+      
 
 
 
@@ -181,10 +208,17 @@ knitr::include_graphics("index/ahrtal_sz.JPG")
 Sacerdote (2012), Di Pietro (2019), Holmes (2002), Spencer et al. (2016), Shidiqi et al. (2023) 
 find negative short-run effects on students and schools. Evidence on long-run effects are mixed. 
 
+--
+
 `r fontawesome::fa('long-arrow-alt-right')` However, most disasters are not as severe as those outliers.
+`r fontawesome::fa('long-arrow-alt-right')` Focus on young kids (grade 3).
+
+--
 
 ### Literature on school closures and absenteeism 
 Covid papers eg. Werner & Woessmann (2023), teacher and student absenteeism eg. Clotfelder, Ladd, and Vigdor (2006), Miller, Murnane, and Willett (2006)
+
+--
 
 `r fontawesome::fa('long-arrow-alt-right')` Natural disaster fundamentally different from Covid. 
 `r fontawesome::fa('long-arrow-alt-right')` Teacher and students absence suffers from endogeneity issues.
@@ -215,31 +249,43 @@ Covid papers eg. Werner & Woessmann (2023), teacher and student absenteeism eg. 
 # Data: Math scores 
 
 .center[
-```{r out.width = '45%' , echo=FALSE}
+### Fig. 3: Average Math Achievement Grade 3 to 5
+```{r out.width = '75%' , echo=FALSE}
 knitr::include_graphics("index/math.png") 
 ```
-
-    Fig. 3: Average Math Achievement Grade 3 to 5
 ]
 ---
 # Data on Disasters (I): FEMA
 
-- FEMA major disaster declarations 2009-2018 (begins in 1964)
+- OpenFEMA Dataset by the Federal Emergency Management Agency (FEMA) of the Department
+of Homeland Security
+- Major disaster declarations 2009-2018 (begins in 1964)
+- A didaster declaration is only made (by the President of the United States) in strongly affected areas that struggle to deal with the consequences `r fontawesome::fa('long-arrow-alt-right')` rules out inconsequential natural disasters. 
 - The disaster declaration includes the date the disaster was declared, the area, the type of incident, denotes which assistance program was declared. 
-- Storms (73%), Floods (20%), Fire (7%), Drought (2%), Freezing, Earthquake, Landslide, Volcanic activity  
+- Storms (73%), Floods (20%), Fire (7%), Drought (2%), Freezing, Earthquake, Landslide, Volcanic activity. 
 - One disaster can cause multiple disaster events across different counties. 
 - For large disasters: Information of fatalities from EM-DAT via county and start date.
 - Define severe natural disasters as disasters that caused $\geq$ 25 deaths (following Bounsat et al. 2020).
 
 ---
-# Data on Disasters (II): FEMA
+# Treatment year
 
 .center[
-```{r out.width = '45%' , echo=FALSE}
+### Fig. 4: First year of natural disaster
+```{r out.width = '75%' , echo=FALSE}
 knitr::include_graphics("index/fema_first_year.png") 
-```
 
-    Fig. 4: First year of a natural disaster
+```
+]
+---
+# Number of natural disasters
+
+.center[
+### Fig. 5: Number of natural disasters between 2009 and 2018
+```{r out.width = '75%' , echo=FALSE}
+knitr::include_graphics("index/fema_sumpast5.png") 
+
+```
 ]
 
 ---
@@ -275,18 +321,24 @@ Main assumptions: Parallel trends for all units, Limited anticipation
 # Results
 
 .center[
+### Fig. 5: Math achievement in grade 3 
 ```{r out.width = '40%' , echo=FALSE}
 knitr::include_graphics("index/sunab_fema_math_3.png") 
 ```
-
-    Fig. 5: Math achievement in grade 3 
 ]
-
 ---
 
 # Alternative specification 
 
 Do more disasters cause more harm?
+
+  $$Y_{i,t} = \alpha_i + \lambda_t + \beta Disaster_{i,t} + \delta'(\mathbf{X}_i \lambda_t) +  \epsilon_{i,t},$$
+where $Disaster_{i,t}$ is the number of natural disasters in the past 5 years in a county and year, $\alpha_i$  and $\lambda_t$ are county and year fixed effects, $\mathbf{X}_i \lambda_t$ includes an interaction between initial county population and a linear time trend. 
+
+---
+# Alternative specification 
+
+Do larger disasters cause greater harm?
 
 
   $$Y_{i,t} = \alpha_i + \lambda_t + \beta Disaster_{i,t} + \delta'(\mathbf{X}_i \lambda_t) +  \epsilon_{i,t},$$
@@ -298,12 +350,25 @@ The preferred measure of a "severe" disaster is one that caused 25 or more death
 # Results: Larger natural disasters cause more harm
 
 .center[
+### Fig. 6: Number of natural disasters in the past 5 years.
 ```{r out.width = '40%' , echo=FALSE}
 knitr::include_graphics("index/large_small_math_3.png") 
 ```
-
-    Fig. 6: Number of natural disasters in the past 5 years.
 ]
+---
+# Disaster Count
+.center[
+### Fig. 7: Number of natural disasters between 2009 and 2018
+```{r out.width = '50%' , echo=FALSE}
+knitr::include_graphics("index/fema_n_disasterD.png") 
+
+```
+]
+
+---
+# Disaster Type 
+
+
 ---
 name: robustness
 # Robustness and Sensitivity

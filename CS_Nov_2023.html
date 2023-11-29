@@ -63,9 +63,8 @@ November 30, 2023
 # Motivation 
 
 .center[
+### Fig. 1: Billion dollar disasters
 &lt;img src="index/billion_dollar_disasters.JPG" width="70%" /&gt;
-
-    Fig. 1: Billion dollar disasters
 ]
 .footnotesize[Source: https://www.ncei.noaa.gov/access/billions/time-series]
 
@@ -80,9 +79,8 @@ November 30, 2023
 - Hurricane Harvey led to &gt;3000 schools closed in four states ranging from 1-19 days.
 ]
 .pull-right[
+### Fig. 2: School closure
 &lt;img src="index/closures_all.png" width="90%" /&gt;
-
-                Fig. 2: School closure
 ]
 
 
@@ -111,9 +109,38 @@ November 30, 2023
 
 # This Paper
 
-- Main Question: What are the effects of natural disasters on student achievement? 
-- Data: Combining county level student achievement (SEDA) for 2009-2018 with disaster declarations in the US from the Federal Emergency Management Agency (FEMA) .
-- Framework:  I estimate the effect of a natural disaster on student achievements in a TWFE framework.
+**Main Question:** What are the effects of natural disasters on student achievement? 
+
+--
+
+## How? 
+
+- **Data:** Combining county level student achievement (SEDA) for 2009-2018 with disaster declarations in the US from the Federal Emergency Management Agency (FEMA).
+
+--
+
+- **Framework:**  Exploit variation across US counties and years in TWFE setting 
+      
+  <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> **binary treatment:** first year of natural disaster
+      
+  <svg aria-hidden="true" role="img" viewBox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"/></svg> DiD event study design, how does the effect evolve over time?, assess common trends 
+
+--
+
+  <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> **continous treatment:** number and severity of natural disasters in the past five years 
+
+  <svg aria-hidden="true" role="img" viewBox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"/></svg> Are more disasters more detrimental or are counties adapting? 
+
+--
+
+  <svg aria-hidden="true" role="img" viewBox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"/></svg> Do larger disasters cause more harm?
+
+--
+
+  <svg aria-hidden="true" role="img" viewBox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"/></svg> Which types of disasters are harmful? 
+
+
+      
 
 
 
@@ -125,10 +152,17 @@ November 30, 2023
 Sacerdote (2012), Di Pietro (2019), Holmes (2002), Spencer et al. (2016), Shidiqi et al. (2023) 
 find negative short-run effects on students and schools. Evidence on long-run effects are mixed. 
 
+--
+
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> However, most disasters are not as severe as those outliers.
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> Focus on young kids (grade 3).
+
+--
 
 ### Literature on school closures and absenteeism 
 Covid papers eg. Werner &amp; Woessmann (2023), teacher and student absenteeism eg. Clotfelder, Ladd, and Vigdor (2006), Miller, Murnane, and Willett (2006)
+
+--
 
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> Natural disaster fundamentally different from Covid. 
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> Teacher and students absence suffers from endogeneity issues.
@@ -153,27 +187,35 @@ Covid papers eg. Werner &amp; Woessmann (2023), teacher and student absenteeism 
 # Data: Math scores 
 
 .center[
-&lt;img src="index/math.png" width="45%" /&gt;
-
-    Fig. 3: Average Math Achievement Grade 3 to 5
+### Fig. 3: Average Math Achievement Grade 3 to 5
+&lt;img src="index/math.png" width="75%" /&gt;
 ]
 ---
 # Data on Disasters (I): FEMA
 
-- FEMA major disaster declarations 2009-2018 (begins in 1964)
+- OpenFEMA Dataset by the Federal Emergency Management Agency (FEMA) of the Department
+of Homeland Security
+- Major disaster declarations 2009-2018 (begins in 1964)
+- A didaster declaration is only made (by the President of the United States) in strongly affected areas that struggle to deal with the consequences <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"/></svg> rules out inconsequential natural disasters. 
 - The disaster declaration includes the date the disaster was declared, the area, the type of incident, denotes which assistance program was declared. 
-- Storms (73%), Floods (20%), Fire (7%), Drought (2%), Freezing, Earthquake, Landslide, Volcanic activity  
+- Storms (73%), Floods (20%), Fire (7%), Drought (2%), Freezing, Earthquake, Landslide, Volcanic activity. 
 - One disaster can cause multiple disaster events across different counties. 
 - For large disasters: Information of fatalities from EM-DAT via county and start date.
 - Define severe natural disasters as disasters that caused `\(\geq\)` 25 deaths (following Bounsat et al. 2020).
 
 ---
-# Data on Disasters (II): FEMA
+# Treatment year
 
 .center[
-&lt;img src="index/fema_first_year.png" width="45%" /&gt;
+### Fig. 4: First year of natural disaster
+&lt;img src="index/fema_first_year.png" width="75%" /&gt;
+]
+---
+# Number of natural disasters
 
-    Fig. 4: First year of a natural disaster
+.center[
+### Fig. 5: Number of natural disasters between 2009 and 2018
+&lt;img src="index/fema_sumpast5.png" width="75%" /&gt;
 ]
 
 ---
@@ -209,16 +251,22 @@ Main assumptions: Parallel trends for all units, Limited anticipation
 # Results
 
 .center[
+### Fig. 5: Math achievement in grade 3 
 &lt;img src="index/sunab_fema_math_3.png" width="40%" /&gt;
-
-    Fig. 5: Math achievement in grade 3 
 ]
-
 ---
 
 # Alternative specification 
 
 Do more disasters cause more harm?
+
+  `$$Y_{i,t} = \alpha_i + \lambda_t + \beta Disaster_{i,t} + \delta'(\mathbf{X}_i \lambda_t) +  \epsilon_{i,t},$$`
+where `\(Disaster_{i,t}\)` is the number of natural disasters in the past 5 years in a county and year, `\(\alpha_i\)`  and `\(\lambda_t\)` are county and year fixed effects, `\(\mathbf{X}_i \lambda_t\)` includes an interaction between initial county population and a linear time trend. 
+
+---
+# Alternative specification 
+
+Do larger disasters cause greater harm?
 
 
   `$$Y_{i,t} = \alpha_i + \lambda_t + \beta Disaster_{i,t} + \delta'(\mathbf{X}_i \lambda_t) +  \epsilon_{i,t},$$`
@@ -230,10 +278,20 @@ The preferred measure of a "severe" disaster is one that caused 25 or more death
 # Results: Larger natural disasters cause more harm
 
 .center[
+### Fig. 6: Number of natural disasters in the past 5 years.
 &lt;img src="index/large_small_math_3.png" width="40%" /&gt;
-
-    Fig. 6: Number of natural disasters in the past 5 years.
 ]
+---
+# Disaster Count
+.center[
+### Fig. 7: Number of natural disasters between 2009 and 2018
+&lt;img src="index/fema_n_disasterD.png" width="50%" /&gt;
+]
+
+---
+# Disaster Type 
+
+
 ---
 name: robustness
 # Robustness and Sensitivity
@@ -273,8 +331,8 @@ Get in contact!
 ---
 # Descriptive Table
 
-<div id="htmlwidget-7593ae39ac1c0a2c2aff" style="width:100%;height:600px;" class="widgetframe html-widget "></div>
-<script type="application/json" data-for="htmlwidget-7593ae39ac1c0a2c2aff">{"x":{"url":"CS_Nov_2023_files/figure-html//widgets/widget_descr.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-57c42061a02ca9c482f7" style="width:100%;height:600px;" class="widgetframe html-widget "></div>
+<script type="application/json" data-for="htmlwidget-57c42061a02ca9c482f7">{"x":{"url":"CS_Nov_2023_files/figure-html//widgets/widget_descr.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
 
 
 ---
