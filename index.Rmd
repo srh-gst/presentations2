@@ -143,9 +143,10 @@ knitr::include_graphics("index/closures_all.png")
 # Motivation
 
 .pull-left[
-- Frequency and costs of natural disasters have increased.
-- Natural disaster can lead to school closures, breakdown of transit system.
+- The occurrence and expenses associated with natural disasters have risen (and could continue to do so).
+- Natural disaster can lead to school closures, breakdown of transit system, or even destroy school buildings and housing. 
 - Potentially lasting effects on students' achievement.
+- Implications for individual returns and human capital.
 - Understanding the costs of natural disasters is crucial for pre- and post-disaster investment and policies.
 
 ]
@@ -228,7 +229,7 @@ knitr::include_graphics("index/math.png")
 - OpenFEMA Dataset by the Federal Emergency Management Agency (FEMA) of the Department
 of Homeland Security
 - Major disaster declarations 2009-2018 (begins in 1964)
-- A didaster declaration is only made (by the President of the United States) in strongly affected areas that struggle to deal with the consequences `r fontawesome::fa('long-arrow-alt-right')` rules out inconsequential natural disasters. 
+- A disaster declaration is only made (by the President of the United States) in strongly affected areas that struggle to deal with the consequences `r fontawesome::fa('long-arrow-alt-right')` rules out inconsequential natural disasters. 
 - The disaster declaration includes the date the disaster was declared, the area, the type of incident, denotes which assistance program was declared. 
 - Storms (73%), Floods (20%), Fire (7%), Drought (2%), Freezing, Earthquake, Landslide, Volcanic activity. 
 - One disaster can cause multiple disaster events across different counties. 
@@ -263,13 +264,13 @@ knitr::include_graphics("index/fema_sumpast5.png")
 Covid papers eg. Werner & Woessmann (2023), teacher and student absenteeism eg. Clotfelder, Ladd, and Vigdor (2006), Miller, Murnane, and Willett (2006)
 
 `r fontawesome::fa('long-arrow-alt-right')` Natural disaster fundamentally different from Covid. 
-`r fontawesome::fa('long-arrow-alt-right')` Teacher and students absence suffers from endogeneity issues.
-`r fontawesome::fa('long-arrow-alt-right')` Effect of both absenteeism and infrastructure damages are possible.
+`r fontawesome::fa('long-arrow-alt-right')` Natural disasters can be seen as an exogenous shock to absence. 
+`r fontawesome::fa('long-arrow-alt-right')` Eg. infrastructure damages are possible.
 
 ---
 
 ### Literature on specific major disasters on schools and students 
-- Sacerdote (2012) for students that were forced to switch school after hurricane Katrina and Rita, there was a sharp decline in test scores in the first year after the hurricanes. Long term effects are mixed
+- Sacerdote (2012) for students that were forced to switch school after hurricane Katrina and Rita, there was a sharp decline in test scores in the first year after the hurricanes. Long term effects are mixed.
 - Di Pietro (2019): earthquake in Italy reduced students’ probability of graduating on-time and slightly increased students’ probability of dropping out. 
 
 `r fontawesome::fa('long-arrow-alt-right')` However, most disasters are not as severe as those outliers.
@@ -281,7 +282,7 @@ Covid papers eg. Werner & Woessmann (2023), teacher and student absenteeism eg. 
 
 $\Delta y_{i,t} = \alpha \sum \tau_k D^k_{c,t} + \theta_t + \epsilon_{i,t}$ 
 
-where $D^k_{c,t}$ is an indicator fuction of whether county c in year t is in bin k. The five bins are no, small, medium, large, very large disasters. $\Delta y_{i,t}$ is the year-to-year change in outcome. Effect on migration, average test score, and post secondary enrollment. 
+where $D^k_{c,t}$ is an indicator function of whether county c in year t is in bin k. The five bins are no, small, medium, large, very large disasters. $\Delta y_{i,t}$ is the year-to-year change in outcome. Effect on migration, average test score, and post secondary enrollment. 
 
 ---
 # Model 
@@ -344,7 +345,7 @@ Do larger disasters cause greater harm?
 
 
   $$Y_{i,t} = \alpha_i + \lambda_t + \delta_1 Minor_{i,t}^{1-5} + \delta_2 Major_{i,t}^{1-5}  + \delta'(\mathbf{X}_i \lambda_t) +  \epsilon_{i,t},$$
-Following the literature $Minor_{i,t}$ and $Major_{i,t}$ are indicators equal to 1 if the county experienced a minor or major disaster in the past five years, $\alpha_i$  and $\lambda_t$ are county and year fixed effects, $\mathbf{X}_i \lambda_t$ includes an interaction between initial county population and a linear time trend. Thus the $\delta_1$ and $\delta_2$ parameters provide estimates of the impact of any type of disaster that falls into either of these two categories.
+Following the literature, $Minor_{i,t}$ and $Major_{i,t}$ are indicators equal to 1 if the county experienced a minor or major disaster in the past five years, $\alpha_i$  and $\lambda_t$ are county and year fixed effects, $\mathbf{X}_i \lambda_t$ includes an interaction between initial county population and a linear time trend. Thus the $\delta_1$ and $\delta_2$ parameters provide estimates of the impact of any type of disaster that falls into either of these two categories.
 
 The preferred measure of a "severe" disaster is one that caused 25 or more deaths, following Boustan et al. (2020). 
 
@@ -359,45 +360,40 @@ knitr::include_graphics("index/size_death_math_3.png")
 ```
 ]
 [Based on cost](#cost)
----
-exclude: true
-# Disaster Count
-.center[
-### Fig. 7: Number of natural disasters between 2009 and 2018
-```{r out.width = '50%' , echo=FALSE}
-knitr::include_graphics("index/fema_n_disasterD.png") 
-
-```
-]
 
 ---
 name: robustness
 # Robustness and Sensitivity
 
-- Using never treated as [control](#nevertreated). 
+- Sun and Abraham: Using never treated as [control](#nevertreated). 
 - Results look similar with [Borusyak, Jaravel, and Spiess (2023)](#borus).
 
+--
+
 ## Mechanism 
-- Effect on net migration indicates an increase in moving.
+Human capital loss is detrimental by itself. But can we identify channels for more targeted policies?
+- Out-migration?
 - Mental health (open)
 - Other?
 
 ---
+name: migration
 # Mechanism: Effect of net migration 
 
 .center[
 ### Fig. 8: Results for net migration (Sun and Abraham) 
-```{r out.width = '50%' , echo=FALSE}
+```{r out.width = '40%' , echo=FALSE}
 knitr::include_graphics("index/sunab_fema_netmig.png") 
 
 ```
 ]
 
+[Enrollment](#enrollment)
 ---
 # Conclusion (for now)
 
 - What is the effect of natural disasters on students?
-- Setting: US where already now 80% of the prolonged unplanned school closures are due to natural disasters and adverse weather conditions.
+- Setting: Number and consts of natural disasters have been increasing, already now 80% of the unplanned school closures are due to natural disasters and adverse weather conditions.
 - Evidence points to a negative effect of natural disaster on student achievement.
 - More natural disasters cause more harm. This effect is larger for large natural disasters. 
 - However, parts of the effect could be explained by out migration. 
@@ -478,7 +474,7 @@ knitr::include_graphics("index/sunab_fema_enrollment.png")
 ```
 ]
 
-[Go back](#robustness)
+[Go back](#migration)
 
 ---
 name:types
@@ -491,3 +487,13 @@ knitr::include_graphics("index/disastertype_math_3.png")
 ]
 
 [Go back](#robustness)
+
+---
+# Disaster Count
+.center[
+### Fig. 7: Number of natural disasters between 2009 and 2018
+```{r out.width = '50%' , echo=FALSE}
+knitr::include_graphics("index/fema_n_disasterD.png") 
+
+```
+]
