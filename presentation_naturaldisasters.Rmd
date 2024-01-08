@@ -95,9 +95,9 @@ xaringanExtra::use_tile_view()
 
 
 <br>
-IT 2024 Winter School 
+Center Seminar  
 
-January 9, 2024
+November 30, 2023
 
 <br>
 <img src="index/Logo.png" width="200px"/>
@@ -144,12 +144,9 @@ knitr::include_graphics("index/closures_all.png")
 
 .pull-left[
 - The occurrence and expenses associated with natural disasters have risen (and could continue to do so).
+- Natural disaster can lead to school closures, breakdown of transit system, or even destroy school buildings and housing. 
 - Potentially lasting effects on students' achievement.
-- Channels: 
-    - Individual inputs: absence, mental health
-    - Parental inputs: job loss, financial constraints, mental health, migration.
-    - Infrasturucture: School closures, breakdown transit system, teachers.
-- Student achievement matters for individual (labor market) returns, human capital, and economic growth.
+- Implications for individual returns and human capital.
 - Understanding the costs of natural disasters is crucial for pre- and post-disaster investment and policies.
 
 ]
@@ -261,6 +258,25 @@ knitr::include_graphics("index/fema_sumpast5.png")
 ]
 
 ---
+### Literature on specific major disasters on schools and students 
+- Sacerdote (2012) for students that were forced to switch school after hurricane Katrina and Rita, there was a sharp decline in test scores in the first year after the hurricanes. Long term effects are mixed.
+- Di Pietro (2019): earthquake in Italy reduced students’ probability of graduating on-time and slightly increased students’ probability of dropping out. 
+
+`r fontawesome::fa('long-arrow-alt-right')` However, most disasters are not as severe as those outliers.
+`r fontawesome::fa('long-arrow-alt-right')` Focus on young kids (grade 3).
+
+
+# Contribution to existing literature
+
+### Literature on school closures and absenteeism 
+Covid papers eg. Werner & Woessmann (2023), teacher and student absenteeism eg. Clotfelder, Ladd, and Vigdor (2006), Miller, Murnane, and Willett (2006)
+
+`r fontawesome::fa('long-arrow-alt-right')` Natural disaster fundamentally different from Covid. 
+`r fontawesome::fa('long-arrow-alt-right')` Natural disasters can be seen as an exogenous shock to absence. 
+`r fontawesome::fa('long-arrow-alt-right')` Eg. infrastructure damages are possible.
+
+
+---
 # Model 
 
 We're interested in the dynamic effects:  
@@ -305,7 +321,6 @@ knitr::include_graphics("index/sunab_fema_math_5.png")
 ```
 ]
 
-
 ---
 
 # Alternative specification 
@@ -349,9 +364,9 @@ name: robustness
 
 ## Mechanism 
 Human capital loss is detrimental by itself. But can we identify channels for more targeted policies?
-- Migration?
+- Out-migration?
 - Mental health (open)
-- Parents, teachers (open)
+- Other?
 
 ---
 name: migration
@@ -400,18 +415,6 @@ include_graphics("index/qrplot.png")
 `r fontawesome::fa('firefox-browser')` [https://www.ifo.de/en/gust-s](https://www.ifo.de/en/gust-s)
 
 ---
-# Literature 
-- Sacerdote (2012) for students that were forced to switch school after hurricane Katrina and Rita, there was a sharp decline in test scores in the first year after the hurricanes. Long term effects are mixed.
-- Di Pietro (2019): earthquake in Italy reduced students’ probability of graduating on-time and slightly increased students’ probability of dropping out. 
-- Literature on the effect natural disaster in developing countries focuses on educational investment (eg. Deuchert and Felfe 2015)
-
-`r fontawesome::fa('long-arrow-alt-right')` However, most disasters are not as severe as those outliers.
-`r fontawesome::fa('long-arrow-alt-right')` Focus on young kids (grade 3).
-
-- Reduced instuction time due to snow (Marcotte 2006, Goodman 2006, Marcotte and Hemelt 2008) `r fontawesome::fa('long-arrow-alt-right')` channel of reduced instruction time to narrow in this setting
-
----
-
 # Descriptive Table
 
 ```{r descr, echo=FALSE}
@@ -474,7 +477,7 @@ name: enrollment
 
 .center[
 ```{r out.width = '45%' , echo=FALSE}
-knitr::include_graphics("index/sunab_fema_enrol.png") 
+knitr::include_graphics("index/sunab_fema_enrollment.png") 
 ```
 ]
 
@@ -487,18 +490,6 @@ name:types
 .center[
 ```{r out.width = '45%' , echo=FALSE}
 knitr::include_graphics("index/disastertype_math_3.png") 
-```
-]
-
-[Go back](#robustness)
-
----
-name:types
-# Per pupil expenditure
-
-.center[
-```{r out.width = '45%' , echo=FALSE}
-knitr::include_graphics("index/sunab_fema_ppexp.png") 
 ```
 ]
 
